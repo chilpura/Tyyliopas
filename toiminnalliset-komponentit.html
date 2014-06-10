@@ -1,0 +1,352 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opintopolku tyyliopas - Toiminnalliset komponentit</title>
+<style type="text/css"></style>
+<link href="css/bootstrap-combined.css" rel="stylesheet" type="text/css">
+<link href="css/css-tyylikirjasto-virkailija.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.well {
+	background: white;
+}
+
+</style>
+</head>
+<body>
+<div class="container-fluid"> 
+  <!-- container -->
+  <div class="navbar"> <!-- PÄÄNAVI -->
+    <div class="navbar-inner"> <a class="brand" href="#">Opintopolku.fi tyyliopas</a>
+      <ul class="nav">
+        <li><a href="index.html">Johdanto</a></li>
+        <li><a href="tietojen-esittaminen.html">Tietojen esittäminen</a></li>
+        <li><a href="tietojen-lisaaminen.html">Tietojen muokkaaminen</a></li>
+        <li class="active"><a href="toiminnalliset-komponentit.html">Toiminnalliset komponentit</a></li>
+        <li><a href="ilmoitukset-indikaattorit.html">Ilmoitukset ja indikaattorit</a></li>
+        <li><a href="navigointi.html">Navigointi</a></li>
+		 <li><a href="sivupohjat.html">Sivupohjat</a></li>
+        <li><a href="graafinen.html">Visuaalinen tyyli</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- END PÄÄNAVI -->
+  
+  <div class="row-fluid"> 
+    <!-- CONTAINER -->
+    <div class="span2"> <!-- SIVUNAVI -->
+      <ul class="nav nav-tabs nav-stacked">
+        <li><a href="#linkit">Linkit</a></li>
+        <li><a href="#painikkeet">Painikkeet</a></li>
+        <li><a href="#valilehtivalikko">Välilehtivalikko</a></li>
+        <li><a href="#sivutus">Sivutus</a></li>
+        <li><a href="#ohjattu_sivutus">Ohjattu sivutus</a></li>
+        <li><a href="#dialogit">Dialogit</a></li>
+        <li><a href="#taittuva_lista">Taittuva lista</a></li>
+        <li><a href="#taittuva_paneeli">Taittuva paneeli</a></li>
+        <li><a href="#hierarkinen_lista">Hierarkinen lista</a></li>
+        <li><a href="#valintalista">Valintalista</a></li>
+        <li><a href="#aktivointi">Toimintojen aktivointi monivalintana</a></li>
+        <li><a href="#kalenterikontrolli">Kalenterikontrolli</a></li>
+        <li><a href="#valikkokuvake">Valikkokuvake</a></li>
+      </ul>
+    </div>
+    <!-- END SIVUNAVI -->
+    
+    <div class="span10">
+      <div class="row-fluid">
+        <h1 id="toiminnalliset_komponentit">Toiminnalliset komponentit</h1>
+        <hr>
+        <p>Tässä kuvataan käyttöliittymän toiminnalliset komponentit joiden avulla käyttäjä voi suorittaa palvelun toimintoja. Niiltä osin kuin ne eivät ole ristiriidassa tässä määritettävien komponenttien kanssa selaimen toiminnallisuuksia tuetaan näiden lisäksi.</p>
+        <h2 id="linkit">Linkit</h2>
+        <div class="well">
+          <p>Linkkeja käytetään siirtymiseen eri sivujen ja näyttöjen välillä. Linkkejä voidaan käyttää myös toiminnoissa mikäli painikkeen käyttö ei ole tarkoituksenmukaista tai kun toiminto ei vaikuta järjestelmän tilaan, esimerkiksi syöttökentän lisäys lomakkeella.</p>
+          <p>Tekstilinkit esitetään alleviivattuina, eikä alleviivausta käytetä muualla kuin linkeissä. Linkatun tekstin tulee kertoa linkin kohteesta selkokielisesti (esimerkiksi kohdesivun otsikko). Esitettäessä linkkejä otsikoiduissa linkkilistoissa, internet-osoitteina tai muissa vastaavissa tapauksissa voidaan linkit esittää URL-osoitteina. Tällöinkin ensisijaisesti suositellaan käytettävän selkokielisiä linkin kohteen esitteleviä tekstejä, ja tarvittaessa niiden yhteyteen voidaan lisätä URL-osoite suluissa mikäli se katsotaan tarpeelliseksi.</p>
+          <p>Vietässä hiiren kursori tekstilinkin ylle korostetaan linkki visuaalisesti. Linkeillä käytetään neljää tilaa, joille kullekin on oma <a href="graafinen.html#linkit">visuaalinen määritys</a> (linkkivärejä ei käytetä muualla kuin linkeissä):
+          <ul>
+            <li>Linkki on Normaali-tilassa (Idle) aina kun se ei ole jossain muussa tilassa. Linkki on oletusarvoisesti Normaali-tilassa.</li>
+            <li>Linkki on Hover-tilassa kun hiiren kursori on sen päällä</li>
+            <li>Linkki on Active-tilassa kun hiiren painike on alaspainettuna linkin kohdalla. Tällöin linkki tulee valituksi.</li>
+            <li>Linkki on Visited-tilassa sen jälkeen kun se on valittu ja kunnes se poistuu selainhistoriasta, jolloin linkki palautuu Normaali-tilaan.</li>
+          </ul>
+          </p>
+          <p>Linkit jotka johtavat sivuille palvelun sisällä (myöh. sisäinen linkki) avataan aina samaan selainikkunaan. Linkit jotka johtavat ulos Opintopolku-palvelusta avataan uuteen selainikkunaan uutena selaimen välilehtenä. Ankkurilinkkejä käytetään vain sivun sisäiseen navigointiin.
+          <ul>
+            <li>Kun linkki johtaa ulos Opintopolku-palvelusta merkitään se kuvakkeella joka sijoitetaan linkkitekstin yhteyteen sen vasemmalle puolen</li>
+            <li>Kun sisäinen linkki sijaitsee linkkilistassa käytetään listan erottimena >> -merkintää. Ulkoisilla linkeillä käytetään samaa kuvaketta myös listoissa.</li>
+            <li>Kun linkki johtaa ladattavaan tiedostoon merkitään tiedostotyypin tunniste suluissa linkkitekstin yhteyteen sen oikealle puolen välilyönnillä erotettuna</li>
+            <li>Kuvia jotka sisältävät linkin ei korosteta visuaalisesti</li>
+          </ul>
+          </p>
+          <p>Hiiren kursorin on muututtava nuolesta kämmeneksi oletuskäytännön mukaisesti selain- ja käyttöjärjestelmäkohtaisesti vietäessä kursori linkin ylle. Tämä koskee myös kuvia joissa on linkki.</p>
+          <p><a href="graafinen.html#linkit">Katso linkkien visuaalinen määritys</a></p>
+                    <div class="well"> <i><b>Esimerkki: Sisäinen linkki</b></i><br>
+            <img src="img/link_intext_int.png"> <br><br>
+                    <i><b>Esimerkki: Ulkoinen linkki</b></i><br>
+            <img src="img/link_intext_ext.png"> </div>            
+                    <div class="well"> <i><b>Esimerkki: Linkkilista, sisäiset linkit</b></i><br><br>
+            <img src="img/link_list_int.png" width="517" height="117"><br><br>             
+                    <i><b>Esimerkki: Linkkilista, ulkoiset linkit</b></i><br><br>
+            <img src="img/link_list_ext.png" width="518" height="114"> </div>            
+        </div>
+        <h2 id="painikkeet">Painikkeet</h2>
+        <div class="well">
+          <p>Painikkeita käytetään kun käyttäjälle mahdollistetaan suoritettavaksi toimintoja jotka vaikuttavat järjestelmän tilaan.</p>
+          <p>Painikkeet sijoitetaan sivupohjien mukaisesti muusta sisällöstä erilleen, yleensä joko sivun tai dialogi-ikkunan ylä- tai alalaitaan. Alueelle jolle painikkeet sijoitetaan ei sijoiteta muuta tietoa tai sisältöä. Painikkeiden järjestyksen tulee olla sama kaikilla sivuilla, sivupohjien määritysten mukaan. Yleisperiaatteena on, että oikealta vasemmalle luettuna (sekä ylhäältä alas) suorittava toiminto edeltää ei-suorittavaa; Kyllä edeltää Ei:tä, Tallenna edeltää Peruutusta.</p>
+          <p>Sivun ensisijainen toiminto näytetään keltaisena painikkeena. Sivulla suositellaan olevan vain yksi ensisijainen toiminto. Mikäli sivulla on useita samanarvoisia ensisijaisia toimintoja voi keltaisia painikkeita olla tarvittaessa useita, ei kuitenkaan koskaan kolmea enempää. Mikäli sivulla tai dialogissa on vain yksi painike, on se aina ensisijainen.</p>
+          
+          <div class="well"> <i><b>Esimerkki: Painikkeiden asemointi sivulla</b></i><br>
+          <img src="img/painike_asemointi.png" width="713" height="178"> <br></div>
+            
+          <p>Mikäli sivulla on haku-toiminto, suositellaan Hae-painikkeen olevan ensisijainen. Lomakkeella Tallenna-painikkeen suositellaan olevan ensisijainen. Ohjatussa sivutuksessa Seuraava-painikkeen suositellaan olevan ensisijainen.</p>
+          <p> Painikkeita on kolmea tyyppiä:
+          <ul>
+            <li>Peruspainike, jota käytetään oletusarvoisesti</li>
+            <li>Kuvakkeellinen painike, jota käytetään erikseen määritellyissä tapauksissa</li>
+            <li>Kuvakepainike, jota käytetään kun painike tulee sijoittaa tietosisällön yhteyteen</li>
+          </ul>
+          </p>
+          <h3>Peruspainike</h3>
+          <p>Peruspainike sisältää tekstin joka kuvaa painikkeen toiminnon verbinä joka kirjoitetaan isolla alkukirjaimella. Poikkeuksena ovat monivaiheiset toiminnot, kuten ohjattu sivutus (wizard), joissa käytetään substantiivejä painikkeiden nimeämisessä. Teksti tasataan painikkeen sisällä keskelle.</p>
+          
+          <div class="well"> <i><b>Esimerkki: Peruspainike, oikealla ensisijainen toiminto</b></i><br>
+          <img src="img/peruspainike.png" width="159" height="43"> <br>         
+          </div>          
+          
+          <p>Peruspainikkeesta on käytettävissä kaksi kokoa: Normaali ja Suuri. Normaali on ensisijainen ja oletusarvoinen painikkeen koko. Suurta painiketta voi käyttää näkymissä, joissa on vain vähän toimintoja ja normaali painike näyttäisi suhteettoman pieneltä muuten tyhjällä sivulla. Esimerkiksi jos näkymässä on vain yksi hakukenttä ja painike (hakukentän on kuitenkin silloin oltava suhteessa painikkeen kokoon).</p>
+          <p><a href="graafinen.html#nappulat">Katso painikkeiden visuaalinen määritys</a></p>
+          <h3>Kuvakkeellinen painike</h3>
+          <p>Painike kuvakkeella sisältää tekstin samalla tavalla kuin peruspainike ja sen lisäksi kuvakkeen painikkeen sisällä tekstin oikealla puolen. Teksti ja kuvake tasataan ryhmänä painikkeen sisällä keskelle.</p>
+          <p>Kuvakkeellista painiketta käytetään seuraaville toiminnoille:
+          <ul>
+            <li>Lisäys: Lisäyksen kohde voi vaihdella ja ilmaistaan tekstillä. Tarkoituksena on, että kun tehdään lisäyksiä järjestelmään käytetään kuvakkeellista lisää –painiketta.</li>
+            <li>Eteneminen: Eteneminen voi olla joko eteenpäin tai taaksepäin ja painike voidaan nimetä eri tavoin, kuten Takaisin / Jatka tai Edellinen / Seuraava. Tarkoituksena on, että kun edetään takaisin tai seuraavaan käytetään kuvakkeellista etenemis –painiketta.</li>
+            <li>Lähetä: Käytetään kun lähetetään tietoja sähköpostitse, tai vastaavalla menetelmällä</li>
+            <li>Hae: Käytetään kun aktivoidaan haku järjestelmään</li>
+            <li>Lataa: Käytetään kun ladataan tietoja tai tiedostoja järjestelmään</li>
+            <li>Tulosta: Käytetään kun järjestelmän tietoja tulostetaan</li>
+            <li>Tallenna: Käyetään kun järjestelmään tallennetaan tietoja</li>
+            <li>Muokkaa: Käytetään kun järjestelmään tallennettuja tietoja avataan muokattavaksi</li>
+            <li>Poista: Käytetään kun järjestelmään tallennettuja tietoja poistetaan</li>
+          </ul>
+          Kuvakkeellinen painike käyttäytyy kuten peruspainike, myös värien osalta.
+          </p>
+          <div class="well"> <i><b>Esimerkki: Kuvakkeellisia painikkeita</b></i><br>
+          <img src="img/painikkeet_kuvakkeella.png" width="282" height="38"> <br>         
+          </div>            
+         <p><a href="graafinen.html#nappulat-ikonit">Katso kuvallisten painikkeiden visuaalinen määritys</a></p> 
+ 
+          <h3>Kuvakepainike</h3>
+          <p>Kuvakepainike on erityistapaus jota käytetään ainoastaan kun painike on välttämätöntä sijoittaa tietosisällön yhteyteen. Kuvakepainikkeessa on ainoastaan kuvake, ja se voidaan sijoittaa taulukkoon, listaan, lomakkeelle tai vastaavaan tilanteeseen.</p>
+          <p>Kuvakepainiketta käytetään seuraaville toiminnoille:
+          <ul>
+            <li>Ohje: Kuvake joka avaa lomakkeella joko asiakohtaisen tai lomakekohtaisen ohjeen</li>
+            <li>Kalenteri: Kuvake joka avaa kalenteri-kontrollin tiedonsyötön yhteydessä</li>
+            <li>Poista: Käytetään kun järjestelmään tallennettuja tietoja poistetaan</li>
+            <li>Lisää: Käytetään kun järjestelmään tehdään lisäyksiä tai tiedonsyötössä tehdään lomakkeelle lisäyksiä</li>
+            <li>Valikko: Kuvake joka avaa valikon jonka avulla listassa tai taulukossa olevia tietoja voi käsitellä</li>
+          </ul>
+          Kuvakkeiden väri voi vaihdella tapauskohtaisesti.
+          </p>
+          <div class="well"> <i><b>Esimerkki: Kuvakepainikkeita, vasemmalta lukien Ohje, Kalenteri, Valikko</b></i><br>
+          <img src="img/kuvakepainike1.png" width="33" height="32"> <img src="img/kuvakepainike2.png" width="35" height="31"> <img src="img/kuvakepainike3.png" width="32" height="28"><br>         
+          </div>            
+         <p><a href="graafinen.html#nappulat-ikonit">Katso kuvallisten painikkeiden visuaalinen määritys</a></p>          
+          
+        </div>
+        <h2 id="valilehtivalikko">Välilehtivalikko (Tab menu)</h2>
+        <div class="well">
+          <p>Välilehtien avulla käyttäjä voi siirtyä eri välilehdille ryhmitellyn sisällön välillä sekä tietoja tarkasteltaessa että tietoja syötettäessä. Välilehtivalikolle ei ole sivulla määrättyä paikkaa vaan se voidaan sijoittaa vapaasti ja halutussa koossa.</p>
+          <p>Suositeltavaa on, että yhdellä sivulla on vain yksi välilehtivalikko. Välilehtivalikon ensimmäinen valinta vasemmalta lukien on oletusarvoisesti valittuna. Valittuna oleva välilehti on visuaalisesti korostettu ja sen sisältämä sisältö on esillä. Käyttäjä voi vaihtaa valintaa valitsemalla toisen välilehden. Valintojen järjestystä ei ole määritetty tai rajoitettu. Välilehtien määrää valikossa ei ole rajoitettu.</p>
+          <p>Kullakin välilehdellä on otsikko joka esitetään välilehden sisällä. Viemällä hiiren kursorin välilehden päälle joka ei ole valittuna, korostetaan välilehti visuaalisesti ja alleviivataan sen otsikko, osoituksena käyttäjälle, että välilehti on valittavissa.</p>
+          
+          <div class="well"> <i><b>Esimerkki: 2 välilehteä asiakokonaisuuksittain</b></i><br>
+          <img src="img/tab1.png" width="478" height="68"><br><br>
+          <i><b>Esimerkki: Kieliversiot välilehdillä</b></i><br>
+          <img src="img/tab2.png" width="257" height="63"><br><br> 
+   <i><b>Esimerkki: Useita välilehtiä asiakokonaisuuksittain</b></i><br>
+          <img src="img/tab3.png" width="988" height="53"><br>         
+                  
+          </div>            
+         <p><a href="graafinen.html#tabit">Katso välilehtien visuaalinen määritys</a></p>          
+        </div>
+        <h2 id="sivutus">Sivutus (Pagination)</h2>
+        <div class="well">
+          <p>Sivutuksen avulla käyttäjä voi selata tietoa näytöittäin kun se on järjestetty usealle sivulle. Sivutuksen tyypillinen käyttötapaus on hakutulosten esittäminen, jolloin tulosjoukot voivat olla suuria eikä niitä voida ryhmitellä välilehdille.</p>
+          <p>Sivutuksen ensimmäinen sivu on oletusarvoisesti valittuna ja esillä. Käyttäjä voi vaihtaa sivua sekä kontrolloida sivutuksen muodostamista erityisellä sivutus-kontrollilla. Sivutus-kontrolli suositellaan asetettavaksi sivutetun sisällön yhteyteen sisällön ylä- ja alapuolelle, tai mikäli tarkoituksenmukaista niin ainoastaan sisällön alapuolelle.</p>
+          <p>Sivutus-kontrolli muodostuu seuraavista elementeistä järjestyksessä vasemmalta oikealle:
+          <ul>
+            <li>Sivutetun sisällön määräindikaattori: Esitetään numeraalinen tieto sivutetun sisällön määrästä tekstitunnistella, esimerkiksi: 1000 hakutulosta.</li>
+            <li>Siirry edelliselle sivulle –painike: Painikkeen avulla käyttäjä voi siirtyä edelliselle sivulle</li>
+            <li>Siirry sivulle –painike: Sivujen lukumäärä ilmaistaan numeroituina painikkeina joiden avulla käyttäjä voi siirtyä sivutuksessa haluamalleen sivulle. Painikkeita muodostetaan yhtä monta kuin sivutuksessa on kulloinkin sivuja ja ne numeroidaan 1:stä alkaen vasemmalta oikealle. Sivu jolla kulloinkin ollaan korostetaan visuaalisesti. Painikkeet esitetään seuraavasti:</li>
+            <ul>
+              <li>Mikäli sivuja on enintään 8, esitetään kaikki painikkeet vierekkäin</li>
+              <li>Mikäli sivuja on enemmän kuin 8, esitetään oletusarvoisesti 5 ensimmäistä painiketta ja 2 viimeistä painiketta ja niiden välissä … -indikaattori joka ilmaisee välissä olevia sivuja. Kun käyttäjä sivujen välillä liikkuessaan siirtyy 5:ttä sivua pidemmälle esitetään esillä olevan sivun lisäksi sen vasemmalla puolen 4 edellistä sivua ja … -indikaattorin jälkeen oikealla puolen 2 viimeistä sivua (esimerkiksi jos käyttäjä on sivulla 12, esitetään sen vasemmalla puolella sivut 8, 9, 10, 11). Kun käyttäjä sivujen välillä liikkuessaan siirtyy sivulle joka on enintään 3:n sivun päässä viimeisestä sivusta korvataan … -indikaattori painikkeella (esimerkiksi jos sivuja on 20 ja käyttäjä siirtyy sivulle 17, esitetään sivut 18, 19,20 sivun oikealla puolen sen sijasta että sivun 18 tilalla olisi …-indikaattori).</li>
+            </ul>
+            <li>Siirry seuraavalle sivulle –painike: Painikkeen avulla käyttäjä voi siirtyä seuraavalle sivulle</li>
+            <li>Sivujen määrän valikko: Alasvetovalikko jonka avulla käyttäjä voi valita yhdellä sivulla esitettävän sisällön määrän. Nimiönä “Näytä”. Alasvetovalikon sisällöksi suositellaan vakiomuotoisesti 10, 50, 100, 200, 500.</li>
+            <li>Sisällön järjestys valikko: Alasvetovalikko jonka avulla käyttäjä voi järjestää (sort) sisällön eri muuttjien mukaan joko nousevaan tai laskevaan järjestykseen. Muuttujia voivat olla esimerkiksi aakkosjärjestys, aikajärjestys tai muut vastaavat esitettävää sisältöä järjestävät muuttujat.</li>
+          </ul>
+          </p>
+          
+          <!-- ESIMERKKIKUVA BOKSISSA -->
+          <div class="well"> <i><b>Esimerkki: Sivutus-kontrolli</b></i><br>
+            <img src="img/pagination1.png" width="704" height="59"> </div>
+            <!-- END -->
+            
+          <p>Mikäli sivutettua sisältöä ei voi tarkoituksenmukaisesti jakaa määräyksiköihin, esimerkiksi jos kysmyksessä on usealle sivulle jakaantuva tekstiartikkeli tulosjoukon sijasta, käytetään kevyempää sivutus-kontrollia, jossa ei ole määräindikaattoria, sivujen määrän valikkoa eikä sisällön järjestyksen valikkoa. Muilta osin sivutus-kontrolli toimii samoin kuin yllä kuvattu.
+          <div class="well"> <i><b>Esimerkki: Kevyt sivutus-kontrolli</b></i><br>
+            <img src="img/pagination2.png" width="441" height="58"> </div>
+
+         <p><a href="graafinen.html#sivutus">Katso sivutuksen visuaalinen määritys</a></p>          
+          </div>      
+        
+        <h2 id="ohjattu_sivutus">Ohjattu sivutus (Wizard)</h2>
+        <div class="well">
+          <p>Ohjattua sivutusta käytetään kun halutaan ohjata käyttäjä käymään tietoja läpi tai syöttämään tietoja määrätyssä järjestyksessä tai halutaan ohjata käyttäjä monivaiheisen toiminnon läpi tai sivun sisältö on jaettavissa selkeisiin vaiheisiin.</p>
+          <p>Jokainen vaihe nimetään otsikolla ja järjestystunnuksella niin, että käyttäjä näkee koko ajan kuinka monta vaihetta kokonaisuudessaan on ja missä kohdin hän on kullakin hetkellä. Sivu jossa käyttäjä tällä hetkellä, sivut joilla hän on jo ollut sekä sivut joilla hän ei vielä ole ollut erotetaan visuaalisesti. Käyttäjä voi liikkua sivuilla eteen- ja taaksepäin yksi sivu kerrallaan. Liikkuminen tapahtuu etenemispainikkeilla, jotka nimetään Edellinen / Seuraava. </p>
+          <p>Ensimmäisessä näkymässä Edellinen-painike nimetään “Peruuta”, jonka avulla käyttäjä voi peruuttaa pois ohjatusta sivutuksesta takaisin näkymään josta hän sen aktivoi.</p>
+          <p>Viimeisessä näkymässä Seuraava-painike nimetään “Valmis”, jonka avulla käyttäjä voi päättää ohjatun sivutuksen ja palata takaisin näkymään jos se aktivoitiin. Mahdolliset syötetyt tiedot ja tehdyt valinnat tallennetaan.</p>
+          <p>Sivuille voidaan asettaa pakollisia toimintoja, kuten valintoja tai tiedon syöttöä, jolloin seuraavalle sivulle eteneminen ei ole mahdollista ennenkuin pakolliset toiminnot on suoritettu. Syötettäessä tietoa tarkistetaan tietojen oikeellisuus ja pakollisuus siirryttäessä sivulta toiselle. Mikäli pakollisia tietoja puuttuu tai tiedot ovat virheellisiä pysytään sivulla ja ilmoitetaan virheilmoituksella tehtävistä toimenpiteistä jotka edellytetään ennen jatkamista seuraavalle sivulle.</p>
+          <p>Edellisillä sivuilla tehdyt valinnat tai tiedonsyötöt voivat vaikuttaa seuraavien sivujen sisältöön.</p>
+          <p>Mikäli sivuilla ei ole pakollisia tietoja, voidaan sallia myös siirtyminen sivulta toiselle vapaassa järjestyksessä valitsemalla sivun (vaiheen) otsikko tai järjestystunnus.</p>
+          
+        <div class="well"> <i><b>Esimerkki: Ohjattu sivutus -kontrolli</b></i><br>
+            <img src="img/wizard.png" width="936" height="125"> </div>   
+        </div>
+        
+        <h2 id="dialogit">Dialogit</h2>
+        <div class="well">
+          <p>Dialogit ovat ikkunoita jotka avataan varsinaisen näkymän päälle kun halutaan varmistaa käyttäjän tekemä valinta tai toiminto, tai kun käyttäjältä pyydetään lisätietoja tai valintoja toiminnon suorittamisen tai tiedonsyötön yhteydessä. Dynaamisten lomakkeiden mahdollisuuksien myötä tarve käyttää dialogeja tiedonsyötön yhteydessä vähenee ja onkin suositeltavaa pyrkiä tältä osin suunnittelemaan toiminnot suoraan lomakkeille dialogien sijaan.</p>
+          <p>Dialogi-ikkunat suljetaan vain käyttäjän toimesta.</p>
+          <p><a href="graafinen.html#dialogit">Katso Dialogi-ikkunan visuaalinen määritys</a></p>
+          <p>Käyttöliittymässä suositellaan käytettävän pääsääntöisesti kahdenlaisia dialogeja, jotka valitaan käyttötarkoituksen mukaan.</p>
+          <h3>Valintadialogi</h3>
+          <p>Kun käyttäjää pyydetään tekemään valinta eri vaihtoehtojen välillä toiminnon yhteydessä tai tiedon syötön yhteydessä käytetään valintadialogia. Dialogi avataan kun käyttäjä aktivoi toiminnon ja dialogissa tehdyt valinnat vaikuttavat toimintoon, tai vastaavasti dialogi avataan syöttölomakkeelta ja dialogissa tehdyt valinnat siirtyvät syöttölomakkeelle.</p>
+          <p>Dialogissa voidaan käyttää erilaisia toiminnallisia komponentteja valintojen esittämiseksi ja tekemiseksi. Dialogi sisältää Peruuta ja Hyväksyntä –painikkeet. Hyväksyntä-painike voidaan nimetä tarkoituksenmukaisesti joko toiminnon mukaan (esimerkiksi Lähetä, Tulosta) tai valinnan mukaan (esimerkiksi Valmis).</p>
+          <p>Kun dialogi peruutetaan toiminnon yhteydessä peruutetaan myös toiminto ja palataan näkymään josta dialogi aktivoitiin. Kun dialogi peruutetaan tiedon syötön yhteydessä palataan takaisin näkymään josta dialogi aktivoitiin ilman valintaa.</p>
+          <p>Kun dialogi hyväksytään toiminnon yhteydessä suoritetaan toiminto dialogissa tehtyjen valintojen mukaisesti ja edetään toimintokohtaiseen näkymään. Kun dialogi hyväksytään tiedon syötöän yhteydessä palataan lomakkeelle josta dialogi aktivoitiin ja dialogissa tehdyt valinnat siirtyvät lomakkeelle tai vaikuttavat lomakkeeseen.</p>
+          
+            <div class="well"> <i><b>Esimerkki: Valintadialogi</b></i><br>
+            <img src="img/dialogi_valinta.png" width="594" height="568"> </div>   
+     
+          <div class="well"> <i><b>Esimerkki: Valintadialogi</b></i><br>
+            <img src="img/dialogi_varmistus.png" width="586" height="419"> </div>
+          
+          <h3>Varmistusdialogi</h3>
+          <p>Kun käyttäjän aktivoima toiminto halutaan varmistaa käytetään varmistus-dialogia jossa käyttäjän tekemä toiminto kuvataan ja pyydetään vahvistamaan. Tyypillinen esimerkki varmistusta vaatimasta toiminnosta on tietojen poistaminen, jolloin käyttäjää pyydetään vahvistamaan poisto ennen sen suorittamista.</p>
+          <p>Dialogi sisältää painikkeet hylkäävään ja hyväksyvään vastaukseen, jotka nimetään kysymyksen- ja tarkoituksenmukaisesti, esimerkiksi Ei / Kyllä tai Peruuta / Ok. Painikkeiden järjestyksessä noudatetaan painikkeille määritettyä järjestystä (kts. Painikkeet).</p>
+          <p>Dialogista voi poistua vain vastaamalla joko hylkäävästi tai hyväksyvästi. Hylkäävä vastaus peruuttaa toiminnon, hyväksyvä vastaus suorittaa sen.</p>
+ 
+ 
+        </div>
+                </div> 
+        <h2 id="taittuva_lista">Taittuva lista (Collapsible list)</h2>
+        <div class="well">
+          <p>Taittuvaa listaa suositellaan käytettäväksi kun listassa on paljon sisältöä ja se voidaan ryhmitellä asiakokonaisuuksittain. Asiakokonaisuudet esitetään otsikoina joita käyttäjä voi avata ja sulkea. Kun asiakokonaisuus on suljettu esitetään siitä ainoastaan otsikko. Kun asiakokonaisuus on avattu esitetään siitä otsikon lisäksi siihen kuuluvat listamerkinnät. </p>
+          <p>Asiakokonaisuuksien määrää ei ole rajoitettu, eikä lisämerkintöjen määrää per asiakokonaisuus. Yhtäaikaa avoinna olevien asiakokonaisuuksien määrää ei ole rajoitettu. Oletusarvoisesti kaikki asiakokonaisuudet ovat suljettu.</p>
+          <p>Vaihtoehtoisesti voidaan oletusarvoisesti avata ensimmäinen asiakaskokonaisuus, mutta tällöin on varmistettava, että kaikki asiakokonaisuudet on käyttäjän nähtävissä ensisilmäyksellä ilman sivuvieritystä. Tämän ratkaisun käyttö riippuu siis asiakokonaisuuksien määrästä listassa sekä ensimmäisen asiakokonaisuuden sisältämien listamerkintöjen määrästä.</p>
+          <p>Vietäessä hiiren kursori otsikon tai listamerkinnän päälle korostetaan se visuaalisesti.
+            Otsikon yhteydessä esitetään nuoli-kuvake joka ilmaisee listan tilaa: nuoli on alaspäin kun lista on auki, nuoli on oikealle kun lista on kiinni. Listamerkintäjen yhteydessä voidaan myös tarvittaessa esittää kuvakkeet (kuvakkeellinen lista).</p>
+          <p>Taittuvaan listaan voidaan yhdistää muita komponentteja, kuten yksi- ja monivalinta tai listan sisältö voi olla linkkejä. Kun taittuvaa listaa käytetään yksivalintalistana siinä ei käytetä valintanappeja (radio button), monivalinnassa valintaruutuja (checkbox) käytetään. Mikäli taittuvan listan yhteydessä käytetään monivalintaa merkitsee asiakokonaisuuden valitseminen kaikkien sen sisältämien listamerkintöjen valintaa, ja päinvastoin (valinnan poistaminen). Taittuva lista voidaan yhdistää myös taulukkoon jolloin taulukon rivejä avataan/suljetaan kuten edellä kuvattu.</p>
+      
+        <div class="well"> <i><b>Esimerkki: Taittuva lista</b></i><br>
+            <img src="img/taittuva_lista.png" width="292" height="644"> </div>   
+    
+        <div class="well"> <i><b>Esimerkki: Taittuva lista yhdistettynä taulukkoon, valikko-kontrolliin (kuvakepainike) ja monivalintaan</b></i><br>
+            <img src="img/taittuva_lista_taulukko.png" width="758" height="210"> </div>   
+              
+        <div class="well"> <i><b>Esimerkki: Taittuva lista monivalintalistassa</b></i><br>
+            <img src="img/taittuva_lista_monivalinta.png" width="551" height="357"> </div>          
+          
+        </div>
+        <h2 id="taittuva_paneeli">Taittuva paneeli (Collapsible panel)</h2>
+        <div class="well">
+          <p>Kokoontaitettava paneeli käyttäytyy kuten kokoontaitettava lista, mutta se voi sisältää listamerkintöjen sijasta laajemmin ja vapaammin erilaista sisältöä, kuten taulukoita, tietojen esitystä, toiminnallisia komponentteja, yms.</p>
+          <p>Kokoontaitettavaa paneelia suositellaan käytettäväksi kun tarkastelunäkymässä halutaan jäsentää esitettävää tietoa.</p>
+          <p>Asiakokonaisuudet esitetään paneeleina joilla on otsikot. Paneelin alueella voi olla erilaista sisältöä. Käyttäjä voi avata ja sulkea paneeleja samaan tapaan kuin kokoontaitettavan listan asiakokonaisuuksia.</p>
+          <p>Asiakokonaisuuksien määrää ei ole rajoitettu, eikä sisällön määrää per asiakokonaisuus. Yhtäaikaa avoinna olevien asiakokonaisuuksien määrää ei ole rajoitettu. Oletusarvoisesti ensimmäinen asiakokonaisuus on avoinna, muut suljettuina.</p>
+        </div>
+        <h2 id="hierarkinen_lista">Hierarkinen lista</h2>
+        <div class="well">
+          <p>Hierarkista listaa suositellaan käytettäväksi kun listan asiakokonaisuudet ja listamerkinnät on järjestetty hierarkiseen rakenteeseen. Hierarkinen lista käyttäytyy ja toimii kuten taittuva lista, kuitenkin niin että se huomioi listan hierarkisuuden jossa voi olla sisäkkäisiä hierarkiatasoja.</p>
+          <p>Hierarkiatasot nimetään otsikoin. Kukin hierarkiataso voi sisältää listamerkintöjä ja/tai alempia hierarkiatasoja. Alemmat hierarkiatasot ja niillä olevat listamerkinnät sisennetään edelliseen hierarkiatasoon nähden. Hierarkiatasojen lukumäärää ei ole rajoitettu, mutta käyttöliittymässä ei suositella käytettävän syvempiä kuin kolmen tason hierarkioita listoissa.</p>
+          <p>Hierarkisessa listassa käytetään kuvakkeita niin, että tasot jotka sisältävät alatasoja erotetaan kuvakkeella tasoista jotka eivät sisällä alatasoja.</p>
+          <p>Jokainen hierarkiataso avataan erikseen. Kun käyttäjä avaa hierarkiatason avautuu sen seuraavalle alemmalle tasolle määritetyt listamerkinnät ja/tai hierarkiatasot (otsikot). </p>
+          <p> Mikäli hierarkista listaa käytetään valintalistana, indikoidaan visuaalisesti kulloinkin listasta valittuna oleva taso ja/tai listamerkintä</p>
+
+        <div class="well"> <i><b>Esimerkki: Hierarkinen lista, jota käytetään valintalistana</b></i><br>
+            <img src="img/hierarkinen_lista.png" width="178" height="284"> </div>           
+          
+        </div>
+        <h2 id="valintalista">Valintalista</h2>
+        <div class="well">
+          <p>Valintalistaa käytetään kun käyttäjälle esitetään vaihtoehtoisia arvoja valittavaksi. Valintalistaa käytetään tiedon syötössä jolloin valitut arvot tallennetaan järjestelmään sekä muuttujien valinnassa esimerkiksi hakuehtojen tai toimintovaihtoehtojen yhteydessä. Valintalistalla tulee olla otsikko joka kuvaa käyttäjälle tehtävän valinnan.</p>
+          <p>Valintalista voi olla joko avattava tai avonainen. Avattavaa valintalistaa käytetään kun halutaan säästää tilaa näkymässä. Avonaista valintalistaa käytetään kun valittavia arvoja on rajallinen määrä ja ne mahtuvat kaikki esille.</p>
+          <p>Valintalista voi olla joko yksi- tai monivalintainen. Yksivalintaisessa valintalistassa käyttäjä voi valita vain yhden arvon. Mikäli käyttäjä vaihtaa valintaa siirtyy valinta edelliseltä arvolta uudelle. Monivalintaisessa valintalistassa käyttäjä voi valita useita arvoja. </p>
+          <h3>Alasvetovalikko (Combo box, drop down menu)</h3>
+          <p>Alasvetovalikkoa suositellaan käytettäväksi avattavana yksivalintalistana.</p>
+          <p>Listan ollessa suljettuna siinä on näkyvillä arvo jonka käyttäjä on valinnut. Listan ollessa avattuna käyttäjän valitsema arvo on korostettu. Käyttäjä voi valita arvon listasta, tai kirjoittaa sen, jolloin valintalista suodattuu syötettyjen merkkien mukaisesti. Vain listassa määritetyt arvot hyväksytään. Listan sisältö järjestetään mielekkäästi käyttötarkoituksen mukaan, esimerkiksi aakkosjärjestykseen.</p>
+          
+          <div class="well"> <i><b>Esimerkki: Alasvetovalikko</b></i><br>
+            <img src="img/alasvetovalikko.png" width="254" height="46"> </div> 
+                 
+          <h3>Yksivalinta</h3>
+          <p>Avonaisessa yksivalintalistassa on esillä kaikki listan arvot. Kukin arvo on merkitty valintanapilla (radio button). Käyttäjä voi valita listasta yhden arvon. Valinta indikoidaan täytetyllä valintanapilla.</p>
+          <p>Vaihtoehtoisesti yksivalintalistana voidaan käyttää kuvakkeellista tai hierarkista listaa jossa valittu arvo korostetaan visuaalisesti.</p>
+          <p>Valinta valintanappien tai muun visuaalisen valinnan korostamisen välillä suositellaan tehtäväksi sivun muun sisällön perusteella huomioiden se mikä palvelee käyttötarkoitusta parhaiten.</p>
+          <p>Valintanappeja voi käyttää myös yksittäin osana taulukko tai muuta komponenttia.</p>
+          
+            <div class="well"> <i><b>Esimerkki: Avoin yksivalintalista</b></i><br><br>
+            <img src="img/yksivalinta.png" width="640" height="213"> </div> 
+          
+          <h3>Monivalinta</h3>
+          <p>Avonaisessa monivalintalistassa on esillä kaikki listan arvot. Kukin arvo on merkitty valintaruudulla (checkbox). Käyttäjä voi valita listasta yhden tai useamman arvon. Listan yhteydessä esitetään Valitse kaikki –valintaruutu kun se on tarkoituksenmukaista. Mikäli käyttäjä valitsee sen, valitaan kaikki listan arvot kerralla. Tehdyt valinnat indikoidaan täytetyllä valintaruudulla.</p>
+          <p>Mikäli monivalintalistassa on runsaasti arvoja eikä niitä voida esittää kaikkia kerralla käytetään taittuvaa tai vieritettävää listaa. Tällöin valitut arvot esitetään täytettyjen valintaruutujen lisäksi monivalintalistan oikealla puolella listassa. Mikäli valittujen lista ei mahdu oikealle puolelle voidaan se sijoittaa myös valintalistan alapuolelle. Valitun arvon edessä näytetään punainen rasti, josta valitun arvon voi myös poistaa. Jos valittuja arvoja on useita, ne esitetään allekkain tai vierekkäin siten, että rastit kohdistuvat pystysuunnassa samaan sarakkeeseen tai vaakasuunnassa samalle riville.</p>
+          <p>Jos monivalintalistassa on todella runsaasti arvoja ja niiden esittäminen taittuvana listana on epäkäytännöllistä, käytetään valintaan hakukenttää. Käyttäjä syöttää hakusanan hakukenttään ja järjestelmä hakee vaihtoehdoista syötettyä hakusanaa vastaavat vaihtoehdot. Valitut arvot esitetään oikealla puolella listassa kuten edellä.</p>
+          
+            <div class="well"> <i><b>Esimerkki: Monivalintalista</b></i><br>
+            <img src="img/monivalintalista.png" width="309" height="31"> </div>           
+          
+            <div class="well"> <i><b>Esimerkki: Monivalintalista vieritettävänä listana</b></i><br>
+            <img src="img/monivalintalista_vieritettava.png" width="478" height="85"> </div>         
+
+            <div class="well"> <i><b>Esimerkki: Monivalintalista taittuvana listana</b></i><br>
+            <img src="img/monivalintalista_taittuva.png" width="549" height="357"> </div> 
+          
+          <p>Valintaruutuja voi käyttää myös yksittäin osana taulukkoa, hakuehtoja tai muissa tarkoituksissa. Tällöin valintaruudun valitseminen merkitsee positiivista valintaa (hyväksyntä, valinta), ja valintaruudun valitsematta jättäminen negatiivista valintaa (hylkääminen, valitsematta jättäminen).</p>
+        </div>
+        <h2 id="aktivointi">Toimintojen aktivointi monivalintana</h2>
+        <div class="well">
+          <p>Käyttäjä voi valita listasta useita tietoja ja sen jälkeen valita niille yhteisesti toiminnon, esimerkiksi Poista tai Muokkaa. Valinta tai monivalinta voi olla edellytyksenä joidenkin toimintopainikkeiden aktivoitumiselle.</p>
+        </div>
+        <h2 id="kalenterikontrolli">Kalenterikontrolli (kuvakepainike)</h2>
+        <div class="well">
+          <p>Päivämäärien syötössä käytetään kalenterikontrollia tekstisyötön lisäksi. Kalenterikontrolli käynnistetään syöttökentän yhteydessä olevasta painikkeesta ja sen avulla valitaan päivämäärä. Kontrolli sijoitetaan ensisijaisesti syöttökentän sisälle, ja toissijaisesti mikäli tämä ei ole mahdollista kentän välittömään yhteyteen oikealle puolelle. Kalenteri avaa kuukausinäkymän, jossa voi selata kuukausia ja valita halutun päivämäärän. Kalenterikontrollissa ei ole kellonajan valintaa.</p>
+          
+          <div class="well"> <i><b>Esimerkki: Kalenterikontrolli</b></i><br>
+            <img src="img/kalenterikontrolli.png" width="331" height="35"> </div> 
+                    
+        </div>
+        <h2 id="valikkokuvake">Valikkokuvake (kuvakepainike)</h2>
+        <div class="well">
+          <p>Valikkokuvake voidaan lisätä taulukoihin ja listoihin riveittäin. Se sijoitetaan aina rivin alkuun vasemmalle puolen ennen tekstiä. Valikkokuvake avaa valittaessa valikon josta voidaan valita toimintoja suoritettavaksi kyseiselle tiedolle.</p>
+          
+                      <div class="well"> <i><b>Esimerkki: Valikkokuvake</b></i><br>
+            <img src="img/valikkokuvake.png" width="188" height="74"> </div> 
+          
+        </div>
+      </div>
+    </div>
+    <!-- END ROW --> 
+    
+  </div>
+  <!-- END SISÄLTÖOSA span10 --> 
+</div>
+<!-- END container--> 
+<script src="http://code.jquery.com/jquery-latest.js"></script> 
+<script src="js/bootstrap.js"></script> 
+
+</body>
+</html>

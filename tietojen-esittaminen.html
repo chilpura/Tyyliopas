@@ -1,0 +1,343 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opintopolku tyyliopas - Tietojen esittäminen</title>
+<style type="text/css"></style>
+<link href="css/bootstrap-combined.css" rel="stylesheet" type="text/css">
+<link href="css/css-tyylikirjasto-virkailija.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.well {
+	background: white;
+}
+
+</style>
+</head>
+<body>
+<div class="container-fluid"> 
+  <!-- container -->
+  <div class="navbar"> <!-- PÄÄNAVI -->
+    <div class="navbar-inner"> <a class="brand" href="#">Opintopolku.fi tyyliopas</a>
+      <ul class="nav">
+        <li><a href="index.html">Johdanto</a></li>
+        <li class="active"><a href="tietojen-esittaminen.html">Tietojen esittäminen</a></li>
+        <li><a href="tietojen-lisaaminen.html">Tietojen muokkaaminen</a></li>
+        <li><a href="toiminnalliset-komponentit.html">Toiminnalliset komponentit</a></li>
+        <li><a href="ilmoitukset-indikaattorit.html">Ilmoitukset ja indikaattorit</a></li>
+        <li><a href="navigointi.html">Navigointi</a></li>
+		 <li><a href="sivupohjat.html">Sivupohjat</a></li>
+        <li><a href="graafinen.html">Visuaalinen tyyli</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- END PÄÄNAVI -->
+  
+  <div class="row-fluid"> 
+    <!-- CONTAINER -->
+    <div class="span2"> <!-- SIVUNAVI -->
+      <ul class="nav nav-tabs nav-stacked">
+        <li><a href="#teksti">Teksti ja kuvat</a></li>
+        <li><a href="#kieliversiot">Kieliversiot</a></li>
+        <li><a href="#terminologia">Terminologia</a></li>
+        <li><a href="#lyhenteet">Lyhenteet</a></li>
+        <li><a href="#nimet">Nimet</a></li>
+        <li><a href="#numeerinen">Numeerinen tieto</a></li>
+        <li><a href="#yhteystiedot">Yhteystiedot</a></li>
+        <li><a href="#jarjestys">Järjestys ja ryhmittely</a></li>
+        <li><a href="#taulukot">Taulukot ja listat</a></li>
+      </ul>
+    </div>
+    <!-- END SIVUNAVI -->
+    
+    <div class="span10">
+      <div class="row-fluid"> 
+        <!-- ROW -->
+        <h1 id="tietojen_esittaminen">Tietojen esittäminen</h1>
+        <hr>
+        <p>Tässä kuvattavia tietojen esitystapoja käytetään yhdenmukaisesti käyttöliittymän kaikilla sivuilla. Mikäli käyttäjällä on ollut mahdollisuus tietoja järjestelmään tallennettaessa vaikuttaa tietojen muotoiluun tai esitystapaan, noudatetaan aina käyttäjän tallentamaa muotoilua.</p>
+        <h2 id="teksti">Teksti ja kuvat</h2>
+        <div class="well">
+        <p>Tekstimuotoinen tieto tasataan oletusarvoisesti vasemmalle. Käyttöliittymässä käytetään helposti luettavia kirjasimia jotka ovat selkeitä ja yleisesti käytössä. Tekstikappaleet pyritään pitämään lyhyinä, ja väliotsikoita käytetään riittävästi jäsentämään tekstiä. Sivut otsikoidaan asianmukaisesti ja otsikot erotetaan muusta sisällöstä. Sivun pääotsikko on esitetty selvästi muuta sisältöä isommilla kirjaimilla. Väliotsikot erottuvat leipätekstistä, mutta ovat pienemmällä kuin pääotsikko.</p>
+        <p>Sivuilla käytetään vain kuvia jotka liittyvät sivulla esitettävään tekstiin. Sivulla olevien kuvien ja tekstin ei tule olla sisällöltään ristiriidassa. Kuva sijoitetaan sen tekstikohdan lähelle, jota se kuvaa. Käytetään hyvälaatuisia ja selkeitä kuvia jotka ovat riittävän suurikokoisia niin, että yksityiskohdat erottuvat selvästi.
+        <p><a href="graafinen.html#typografia">Katso Typografia määritys</a></p>
+        </div>
+        <h2 id="kieliversiot">Kieliversiot</h2>
+        <div class="well">
+          <p>Palvelu sisältää useita kieliversioita. Käyttöliittymäkielet ovat virkailijapalveluissa suomi ja ruotsi, Oppijan palvelussa suomi (Opintopolku.fi), ruotsi (Studieinfo.fi) ja englanti (Studyinfo.fi).</p>
+          <p>Virkailijapalveluissa käyttöliittymäkieli määräytyy käyttäjän omissa tiedoissa valitun asiointikielien mukaisesti. Palvelun aloitusnäkymässä (kirjautumissivu) jossa käyttäjää ei vielä ole tunnistettu tarjotaan ylätunnisteessa kielivalinta suomi / ruotsi, mikä vaikuttaa ainoastaan kyseiseen näkymään sekä siihen suoraan liitettyihin lisänäkymiin, kuten Rekisteriseloste ja Tietosuojaseloste. Oletusarvoinen kieli aloitusnäkymässä on suomi.</p>
+          <p>Oppijan palvelussa käyttäjä voi tehdä kielivalinnan milloin tahansa palvelun käytön aikana. Kielivalinta muuttaa käyttöliittymän koko sisällön valitulle kielelle, seuraavia poikkeuksia lukuun ottamatta:
+          <ul>
+            <li>Korkeakouluja lukuunottamatta koulutuksen kuvauksen tekstisisältö ja nimi näytetään aina oletusarvoisesti opetuskielellä. Koulutuskuvauksesta voi katsoa myös muunkieliset kuvaukset mikäli ne ovat olemassa.</li>
+            <li>Korkeakouluja lukuunottamatta koulutukseen hakeutuminen näytetään sillä kielellä, jolla valintaperusteet on kuvattu, oletusarvoisesti opetuskielellä. Esimerkiksi lukiokoulutuksen ja ammatillisten perustutkintojen opiskelijaksi ottamisen perusteet ovat vain suomeksi ja ruotsiksi (asetusteksti).</li>
+            <li>Korkeakouluja lukuunottamatta oppilaitoksen kuvaus näytetään samalla kielellä kuin koulutuskuvaus, mikäli organisaation kuvaus on olemassa ko. kielellä. Muussa tapauksessa esitetään käyttöliittymän kielisenä.</li>
+          </ul>
+          </p>
+          <p>Käyttöliittymässä tulee kiinnittää huomiota siihen, että sen kieli pysyy samana, vaikka sisältö olisi monikielistä. Syöttökenttien nimet ovat esimerkiksi suomenkielisessä käyttöliittymässä aina suomeksi, vaikka syötettäisiin ruotsin- tai  englanninkielistä sisältöä.</p>
+          <p>Yksittäiset sisältöelementit joista on useita kieliversioita esitetään käyttäjille vaihtoehtoina jotka merkitään ISO 639 –standardin mukaisilla kielikoodeilla. Kieliversioiden esittämisjärjestys päätetään tarpeen mukaan.</p>
+          <p>Mikäli käyttäjälle tarjotaan yksittäisiä sisältöelementtejä tai käyttöliittymän sivuja joista on vain muu kuin käyttöliittymän kielen mukainen versio, tulee kielen vaihtumisesta esittää aina selkeä maininta.</p>
+        </div>
+        <h2 id="terminologia">Terminologia</h2>
+        <div class="well">
+          <p>Käyttöliittymässä suositellaan käytettävän yleiskieltä ja mahdollisimman yhdenmukaisia termejä sekä virkailijapalvelussa että Oppijan palvelussa. Viranomaispalvelun luonteen vuoksi myös laki- ja asetusteksti hyväksytään, mutta tällöin asia suositellaan selitettäväksi ohjetekstissä asiayhteydessään.</p>
+          <p>Opetus- ja koulutussanaston osalta palvelussa käytetään Oksa-sanastoa: <a href="https://confluence.csc.fi/pages/viewpage.action?pageId=8688189" target="_blank">https://confluence.csc.fi/pages/viewpage.action?pageId=8688189</a></p>
+          <p>Palvelun kehityksessä hyödynnetään palveluun luotua Koodistopalvelua, jotta termit ovat yhtenevät ja samassa muodossa kaikissa alipalveluissa.</p>
+          <p>Käyttöliittymän tekstit tulee aina oikolukea ja tarkistaa niiden oikeakielisyys.</p>
+        </div>
+        <h2 id="lyhenteet">Lyhenteet</h2>
+        <div class="well">
+          <p>Muiden kuin yleisten lyhenteiden käyttöä vältetään. Mikäli käytettävää lyhennettä ei ole määritetty tähän tyylioppaaseen noudatetaan lyhenteiden käytössä Kotimaisten kielten keskuksen ohjeistoja. <a href="http://www.kotus.fi" target="_blank">Katso: Kotimaisten kielten keskus</a>. Yleiset lyhenteet joita palvelussa käytetään on listattu alla:
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Käyttöyhteys</th>
+                <th>Käytettävä lyhenne suomeksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Kellonaika</td>
+                <td>klo</td>
+              </tr>
+              <tr>
+                <td>Postilokero</td>
+                <td>PL</td>
+              </tr>
+              <tr>
+                <td>Puhelinnumero</td>
+                <td>Puh.</td>
+              </tr>
+              <tr>
+                <td>Faksinumero</td>
+                <td>Fax.</td>
+              </tr>
+              <tr>
+                <td>Sähköpostiosoite</td>
+                <td>S-posti</td>
+              </tr>
+              <tr>
+                <td>Euro</td>
+                <td>EUR</td>
+              </tr>
+              <tr>
+                <td>Maanantai</td>
+                <td>ma</td>
+              </tr>
+              <tr>
+                <td>Tiistai</td>
+                <td>ti</td>
+              </tr>
+              <tr>
+                <td>Keskiviikko</td>
+                <td>ke</td>
+              </tr>
+              <tr>
+                <td>Torstai</td>
+                <td>to</td>
+              </tr>
+              <tr>
+                <td>Perjantai</td>
+                <td>pe</td>
+              </tr>
+              <tr>
+                <td>Lauantai</td>
+                <td>la</td>
+              </tr>
+              <tr>
+                <td>Sunnuntai</td>
+                <td>su</td>
+              </tr>
+              <tr>
+                <td>Luokka-aste</td>
+                <td>lk</td>
+              </tr>
+            </tbody>
+          </table>
+          </p>
+          <p>Yleisten lyhenteiden erikieliset versiot lisätään tähän määritysten valmistuttua.</p>
+        </div>
+        <h2 id="nimet">Nimet</h2>
+        <div class="well">
+          <p>Nimet esitetään seuraavasti:
+          <ul>
+            <li>Henkilöiden nimet</li>
+            <ul>
+              <li>Mikäli henkilöiden nimet esitetään yhtenäisinä (sukunimi ja etunimet yhdessä), esitetään ne sukunimi ensin jonka jälkeen etunimet järjestyksessä, sukunimen ja ensimmäisen etunimen välissä käytetään erottimena pilkkua.</li>
+              <li>Esimerkki: Meikäläinen, Matti Antero</li>
+            </ul>
+            <li>Oppilaitosten nimet</li>
+            <ul>
+              <li>Ellei muuta ole määritelty, oppilaitosten nimet esitetään käyttäen isoa alkukirjainta nimen ensimmäisellä sanalla. Mikäli oppilaitoksen nimen yhteyteen merkitään luokka-aste käytetään erottimena pilkkua ja välilyöntiä:</li>
+              <li>Esimerkki: Helsingin suomalainen yhteiskoulu, 9. lk</li>
+            </ul>
+            <li>Luokka-asteet</li>
+            <ul>
+              <li>Luokka-asteet merkitään käyttäen luokka-asteen numeraalista tunnusta sekä välilyönnin jälkeen pistettä ja lyhennettä lk.</li>
+              <li>Esimerkki: 9. lk</li>
+            </ul>
+          </ul>
+          </p>
+        </div>
+        <h2 id="numeerinen">Numeerinen tieto</h2>
+        <div class="well">
+          <p>Numeerinen tieto esitetään seuraavasti:</p>
+          <ul>
+            <li>Päivämäärä</li>
+            <ul>
+              <li>Päivämäärät esitetään ilman etunollia</li>
+              <li>Vuosiluvut esitetään neljällä numerolla</li>
+              <li>Erotinmerkkinä käytetään pistettä</li>
+              <li>Esimerkki: 1.1.2014</li>
+            </ul>
+            <li>Kellonaika</li>
+            <ul>
+              <li>Käytetään 24 tunnin kelloa</li>
+              <li>Tunnit esitetään ilman etunollaa</li>
+              <li>Erotinmerkkinä käytetään kaksoispistettä</li>
+              <li>Esimerkki: 16:15 tai 9:15</li>
+            </ul>
+            <li>Lukumäärä</li>
+            <ul>
+              <li>Desimaalierottimena käytetään pilkkua</li>
+              <li>Esimerkki: 1,5</li>
+            </ul>
+            <li>Valuutta</li>
+            <ul>
+              <li>Tuhaterottimena käytetään välilyöntiä</li>
+              <li>Desimaalierottimena käytetään pilkkua</li>
+              <li>Käytetään yleisesti tunnettuja valuuttojen lyhenteitä</li>
+              <li>Esimerkki: 1 000,00 EUR</li>
+            </ul>
+            <li>Puhelinnumero</li>
+            <ul>
+              <li>Katso yhteistietojen esittäminen</li>
+            </ul>
+            <li>Henkilötunnus</li>
+            <ul>
+              <li>Kaikki henkilötunnuksen sisältämät merkit erottimineen kirjoitetaan yhteen ilman välejä</li>
+            </ul>
+            <li>Hakemusnumero</li>
+            <ul>
+              <li>Kaikki tunnuksen sisältämät merkit erottimineen kirjoitetaan yhteen ilman välejä</li>
+              <li>Henkilötunnus on aina linkki henkilön tietoihin</li>
+            </ul>
+            <li>Organisaatio- tai oppijanumero</li>
+            <ul>
+              <li>Kaikki numeron sisältämät merkit erottimineen kirjoitetaan yhteen ilman välejä</li>
+              <li>Esim. 1.2.246.562.24.66090832772</li>
+            </ul>
+          </ul>
+        </div>
+        <h2 id="yhteystiedot">Yhteystiedot</h2>
+        <div class="well">
+          <p>Yhteystiedot esitetään seuraavasti:</p>
+          <ul>
+            <li>Sähköpostiosoite</li>
+            <ul>
+              <li>Sähköpostiosoitteet esitetään sellaisenaan ilman otsikkoa tai etuliitettä (label)</li>
+              <li>Kun sähköpostisoitteen ei haluta olevan linkki käytetään (a) merkintää @-merkkinä</li>
+              <ul>
+                <li>Esimerkki: esimerkkiosoite(a)oph.fi. </li>
+              </ul>
+              <li> Kun sähköpostiosoitteen halutaan olevan linkki käytetään @-merkkiä ja tekstilinkin esitysmuotoa. Tällöin sähköpostiosoitteen klikkaaminen aktivoi sähköpostiviestin luomisen valittuun osoitteeseen.</li>
+              <ul>
+                <li>Esimerkki: <a href="mailto:esimerkkiosoite@oph.fi">esimerkkiosoite@oph.fi</a></li>
+              </ul>
+            </ul>
+            <li>Kotimaan puhelinnumero</li>
+            <ul>
+              <li>Kotimaiset puhelinnumerot esitetään erottaen suuntanumerot ja liittymätunnisteet välilyönnillä ja numerot enintään neljän numeron jaksoissa erottaen jaksot välilyönnillä. Puhelinnumeron eteen lisätään tunniste Puh.</li>
+              <li>Esimerkki: Puh. 040 1234 567, Puh. 09 1234 567.</li>
+            </ul>
+            <li>Ulkomaan puhelinnumero</li>
+            <ul>
+              <li>Ulkomaalaiset puhelinnumerot esitetään kuten kotimaiset, mutta niihin lisätään ensimmäiseksi + -merkki ja maatunnus omana jaksonaan ja poistetaan suuntanumerosta/liittymätunnisteesta ensimmäinen 0.</li>
+              <li>Esimerkki: Puh. +358 40 1234 567, Puh. +358 9 1234 567</li>
+            </ul>
+            <li>Faksinumero</li>
+            <ul>
+              <li>Faksinumerot esitetään kuten puhelinnumerot tunnisteella Fax.</li>
+              <li>Esimerkki: Fax. 09 1234 567</li>
+            </ul>
+            <li>Internet-osoite</li>
+            <ul>
+              <li>Internet-osoitteet esitetään muodossa <a href="www.internetosoite.fi">www.internetosoite.fi</a> linkitettynä ko. osoitteeseen.</li>
+            </ul>
+            <li>Jos yhteystiedosta on useita kieliversioita erotetaan ne / merkillä.</li>
+            <ul>
+              <li>Esimerkki: Puh. 040 1234 567 / Tfn. 040 2345 678</li>
+            </ul>
+            <li>Käyntiosoite</li>
+            <ul>
+              <li>Käyntiosoitteet esitetään erottaen katuosoite ja postinumero pilkulla tai rivinvaihdolla</li>
+              <li>Esimerkki: Katuosoite 1 A 2, 00100 Helsinki</li>
+            </ul>
+            <li>Postiosoite</li>
+            <ul>
+              <li>Postiosoitteet esitetään kuten käyntiosoite ellei kysymyksessä ole postilokero-osoite. Postilokero-osoitteet esitetään käyttän PL tunnusta postilokeronumeron edessä. Postilokeronumer erotetaan postinumerosta pilkulla tai rivinvaihdolla</li>
+              <li>Esimerkki: PL 123, 00100 HELSINKI</li>
+            </ul>
+            <li>Postiosoitteet ja käyntiosoitteet esitetään erikseen ja nimetään tarvittaessa selkeästi</li>
+          </ul>
+        </div>
+        <h2 id="jarjestys">Järjestys ja ryhmittely</h2>
+        <div class="well">
+          <p>Tiedot esitetään pääsääntöisesti yhdellä sivulla ja ryhmitellään sopiviin asiakokonaisuuksiin jotka otsikoidaan kuvaavasti. Olennaisimmat tiedot pyritään aina esittämään ensin.</p>
+          <p>Mikäli esitettäviä tietoja on runsaasti voidaan tiedot jakaa usealle sivulle käyttäen joko
+          <ul>
+            <li>Välilehtiä (tab). <a href="toiminnalliset-komponentit.html#valilehtivalikko">Katso: Toiminnalliset komponentit</a></li>
+            <li>Sivutusta (pagination). <a href="toiminnalliset-komponentit.html#sivutus">Katso: Toiminnalliset komponentit</a></li>
+            <li>Ohjattua sivutusta (wizard). <a href="toiminnalliset-komponentit.html#ohjattu_sivutus">Katso: Toiminnalliset komponentit</a></li>
+          </ul>
+          </p>
+          <p>Ensisijaisesti tulee käyttää välilehtiä. Välilehtien käytön edellytyksenä on, että tieto voidaan jakaa asiakokonaisuuksiin jotka voidaan selkeästi nimetä ja erottaa toisistaan. Kullekin välilehdelle tulee antaa otsikko joka kuvaa sillä esitettävää asiakokonaisuutta.</p>
+          <p>Mikäli välilehtiä ei voida käyttää käytetään sivutusta. Sivutusta käytettäessä suositellaan, että käyttäjällä on mahdollisuus vaikuttaa tiedon esitysjärjestykseen sekä yhdellä sivulla esitettävän tiedon määrään, ja tätä kautta sivujen lukumäärään.</p>
+          <p>Ohjattua sivutusta käytetään kun halutaan ohjata käyttäjä käymään läpi tai syöttämään tietoja määrätyssä järjestyksessä.</p>
+        </div>
+        <h2 id="taulukot">Taulukot ja listat</h2>
+        <div class="well">
+          <p><b>Taulukot</b></p>
+          <p>Taulukoita käytetään kun tietoa tulee jäsentää yksinkertaista tekstiä tai listaa enemmän. Taulukolla ei ole välttämätöntä olla otsikkoa, mutta taulukon sarakkeilla tulee olla sarakeotsikot. Sarakkeiden tai rivien lukumäärää ei ole rajattu.</p>
+          <p>Taulukon soluissa voidaan vapaasti käyttää tekstiä, kuvia, kuvakkeita, numeraalista tietoa, syöttökenttiä, linkkejä, kontrolleja ja toimintoja. Taulukon rivit erotetaan toisistaan raidoituksella (kts. Visuaalinen tyyli) ja taulukon yhteydessä käytetään hover-toimintoa joka korostaa sen taulukon rivin jonka yllä hiiren kursori kulloinkin on.</p>
+          <p>Käyttäjä voi järjestää taulukon kunkin sarakeotsikon mukaan joko nousevaan tai laskevaan järjestykseen. Taulukko on aina järjestetty jonkin sarakeotsikon mukaan, oletusarvoisesti ensimmäinen vasemmalta. Taulukon järjestävä sarake indikoidaan nuoli-ikonilla ja nuolen suunta osoittaa järjestyksen suunnan.</p>
+          <p><a href="graafinen.html#taulukot">Katso Taulukoiden visuaalinen määritys</a></p>
+          <p><b>Listat</b></p>
+          <p>Listalla tulee olla otsikko. Seuraavien listatyyppien käyttöä suositellaan:
+          <ul>
+            <li>Numeroimaton lista, jossa luettelomerkkinä käytetään palloa (bullet point)</li>
+            <ul><li><a href="graafinen.html#typografia">Katso Typografia määritys</a></li></ul>
+            <li>Numeroitu lista jossa luettelomerkkinä käytetään järjestysnumeroa</li>
+            <ul><li><a href="graafinen.html#typografia">Katso Typografia määritys</a></li></ul>            
+            <li>Linkkilista jossa luettelomerkkinä käytetään >> -tunnistetta linkkien edessä</li>
+            <ul>
+              <li>Linkkilistassa linkit ovat valittavissa ja käyttäytyvät kuten linkeille on määritetty</li>
+            <li><a href="graafinen.html#linkit">Katso Linkkien visuaalinen määritys</a></li> 
+            </ul>
+            <li>Kuvakkeellinen lista jossa luettelomerkkinä käytetään graafista kuvaketta</li>
+            <ul>
+              <li>Kuvakkeellisessa listassa kuvakkeet ja/tai tekstit voivat olla linkkejä, tai kuvake voi toimia toimintopainikkeena (valikko), tai listaa voidaan käyttää valintalistana (yksivalinta)</li>
+				<li>Käytettäessä kuvakkeellista listaa valintalistana korostetaan visuaalisesti kulloinkin listasta valittuna oleva listamerkintä</li>
+            <li><a href="graafinen.html#muuta">Katso visuaalinen määritys</a></li> 
+            </ul>
+            <li>Kaksipalstainen lista, jossa tiedon nimiö esitetään vasemmalla ja tieto oikealla. Nimiä on oikealle tasattu ja tieto on vasemmalle tasattu.</li>
+            <li>Toiminnalliset listat, kuten taittuva lista, hierarkinen lista ja valintalista</li>
+            <ul>
+              <li><a href="toiminnalliset-komponentit.html#taittuva_lista">Taittuva lista: Katso toiminnalliset komponentit</a></li>
+				<li><a href="toiminnalliset-komponentit.html#hierarkinen_lista">Hierarkinen lista: Katso toiminnalliset komponentit</a></li>
+				<li><a href="toiminnalliset-komponentit.html#valintalista">Valintalista: Katso toiminnalliset komponentit</a></li>
+            </ul>
+          </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- END ROW --> 
+    
+  </div>
+  <!-- END SISÄLTÖOSA span10 --> 
+</div>
+<!-- END container--> 
+<script src="http://code.jquery.com/jquery-latest.js"></script> 
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

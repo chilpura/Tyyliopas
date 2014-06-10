@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opintopolku tyyliopas - Tietojen lisääminen, muokkaaminen ja poistaminen</title>
+<style type="text/css"></style>
+<link href="css/bootstrap-combined.css" rel="stylesheet" type="text/css">
+<link href="css/css-tyylikirjasto-virkailija.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.well {
+	background: white;
+}
+
+</style>
+</head>
+<body>
+<div class="container-fluid"> 
+  <!-- container -->
+  <div class="navbar"> <!-- PÄÄNAVI -->
+    <div class="navbar-inner"> <a class="brand" href="#">Opintopolku.fi tyyliopas</a>
+      <ul class="nav">
+        <li><a href="index.html">Johdanto</a></li>
+        <li><a href="tietojen-esittaminen.html">Tietojen esittäminen</a></li>
+        <li class="active"><a href="tietojen-lisaaminen.html">Tietojen muokkaaminen</a></li>
+        <li><a href="toiminnalliset-komponentit.html">Toiminnalliset komponentit</a></li>
+        <li><a href="ilmoitukset-indikaattorit.html">Ilmoitukset ja indikaattorit</a></li>
+        <li><a href="navigointi.html">Navigointi</a></li>
+		 <li><a href="sivupohjat.html">Sivupohjat</a></li>
+        <li><a href="graafinen.html">Visuaalinen tyyli</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- END PÄÄNAVI -->
+  
+  <div class="row-fluid"> 
+    <!-- CONTAINER -->
+    <div class="span2"> <!-- SIVUNAVI -->
+      <ul class="nav nav-tabs nav-stacked">
+        <li><a href="#lisaaminen">Tietojen lisääminen</a></li>
+        <li><a href="#muokkaaminen">Tietojen muokkaaminen</a></li>
+        <li><a href="#poistaminen">Tietojen poistaminen</a></li>
+      </ul>
+    </div>
+    <!-- END SIVUNAVI -->
+    
+    <div class="span10">
+      <div class="row-fluid">
+        <h1 id="tiedot">Tietojen lisääminen, muokkaaminen ja poistaminen</h1>
+        <hr>
+        <p>Tässä kuvataan käyttöliittymä tietojen lisäämiseksi järjestelmään ja tallennettujen tietojen muokkaamiseen sekä poistamiseen.</p>
+        <h2 id="lisaaminen">Tietojen lisääminen (Lomake)</h2>
+        <div class="well">
+          <p>Kun tietoa lisätään järjestelmään tarjotaan käyttäjälle täytettäväksi tyhjä lomake mahdollisine oletusarvoineen. <a href="sivupohjat.html#lomakenakyma">Katso: Lomake -sivupohja</a>. </p>
+         <p> Lomakkeet voivat sisältää vapaasti syöttökenttiä, toiminnallisia komponentteja sekä muita tietoja. Lomakkeilla käyttäjälle tarjotaan oletusarvo aina kun sellainen on tiedossa.</p>
+          <p>Lomakkeiden tiedot ryhmitellään sopiviin asiakokonaisuuksiin ja asiakokonaisuudet otsikoidaan kuvaavasti. Pitkät lomakkeet jaetaan välilehdille. Tällöin ensimmäisellä välilehdellä esitetään kaikki pakolliset tiedot sekä perustiedot ja jälkimmäisillä välilehdillä muut tiedot ryhmiteltynä sopiviin asiakokonaisuuksiin. Eri koulutusasteita koskevissa vastaavissa näkymissä pyritään käyttämään mahdollisimman pitkälle yhdenmukaista nimeämiskäytäntöä. <a href="toiminnalliset-komponentit.html#valilehtivalikko">Katso: Välilehtikontrolli -komponentti.</a></p>
+          <p>Kun käyttäjä halutaan ohjata syöttämään lomakkeen tiedot määrätyssä järjestyksessä, tai lomake on monivaiheinen jossa edelliset vaiheet vaikuttavat seuraaviin, tai lomakkeen täyttö on jaettavissa selkeisiin vaiheisiin, käytetään ohjattua sivutusta (wizard). <a href="toiminnalliset-komponentit.html#ohjattu_sivutus">Katso: Ohjattu sivutus -komponentti.</a></p>
+          <p>Lomakkeen tiedot tallennetaan kun käyttäjä aktivoi Tallenna-toiminnon. Tallenna-painike on aina aktiivinen. Mikäli käyttäjä poistuu lomakkeelta ilman tallennusta tai niin, että tallentamattomia tietoja on, varmistetaan käyttäjältä halutaanko tiedot tallentaa. <a href="toiminnalliset-komponentit.html#dialogit">Katso: Varmistusdialogi.</a></p>
+          <p>Kaikki käyttäjän syöttämä tieto tarkistetaan, jotta voidaan varmistua pakollisten tietojen syöttämisestä sekä tiedon kirjaamisesta oikeassa muodossa. Tarkistus tehdään lomakkeella kun käyttäjä siirtyy pois  sellaisesta lomakkeen kentästä jonka hän on aktivoinut. Mikäli käyttäjä jättää tiedon kirjaamatta pakolliseen kenttään tai tieto on kirjattu ei-hyväksyttävässä muodossa ilmoitetaan siitä käyttäjälle kenttäkohtaisella virheilmoituksella heti kun käyttäjä poistuu aktivoidusta kentästä. Kenttäkohtainen virheilmoitus poistetaan näkyvistä kun käyttäjä korjaa tiedon kenttään hyväksyttävään muotoon. Tarkistus tehdään tarvittaessa myös käyttäjän aktivoidessa Tallenna-toiminnon selaimessa ennen tallennusta järjestelmään. Virheellistä tietoa ei tallenneta.</p>
+          <p>Mikäli tallennuksen yhteydessä havaitaan virheitä tai pakollisten tietojen puuttumista esitetään virheilmoitus, jossa ilmoitetaan “Lomakkeen tiedoissa on virheitä tai puutteita. Ole hyvä ja tarkista lomakkeen tiedot: <i>kaikkien niiden kenttien nimiö joissa virheitä esiintyy, pilkulla erotettuna mikäli useita</i>.” Tämän lisäksi kunkin kentän yhteydessä jossa virhe tai puute esiintyy esitetään kenttäkohtainen virheilmoitus jossa käyttäjälle kerrotaan mikä syötteessä on vialla ja kuinka se tulee korjata. <a href="ilmoitukset-indikaattorit.html#virheilmoitus">Katso: Virheilmoitukset</a>. Käyttäjälle tarjotaan kaikki hänen syöttämänsä tiedot muokattaviksi.</p>
+          <p>Onnistuneen tallennuksen jälkeen käyttäjä saa palautteen tallennuksesta ilmoituksena. Lomakkeen tila pysyy muuten samana ja käyttäjä pysyy lomakenäkymässä tallennuksen jälkeen. Jatka-painikkeella käyttäjä siirtyy tarkastelunäkymään, jossa hän näkee tallentamansa tiedot tekstimuodossa. <a href="ilmoitukset-indikaattorit.html#palaute">Katso: Palauteilmoitus</a>.</p>
+          <p>Järjestelmä huolehtii tietojen yhtenäisistä tallennusmuodoista.</p>
+          <h3>Syöttökentät</h3>
+          <p>Syöttökentät sijoitetaan allekkain ja nimetään kuvaavasti (nimiö). Lomakkeissa käytetään keskitettyä tyyliä, jossa nimiöt tasataan oikeaan ja syöttökentät vasempaan. Syöttökenttien leveyden tulee olla yhdenmukainen ellei ole erikseen perusteltua esittää eri levyisiä syöttökenttiä.</p>
+          <p>Syöttökenttiin syötettävä teksti tasataan vasemmalle, poislukien numeroarvot; Syötettäessä pelkkiä numeroarvoja tasataan ne oikealle. Syöttökenttien koon tulee indikoida syötettävän tekstin määrää seuraavasti:
+          <ul>
+            <li>Lyhyt kenttä tekstille jonka enimmäispituus on 10 merkkiä, esimerkiksi yleisesti numeraalinen tieto</li>
+            <li>Normaali kenttä tekstille jonka enimmäispituus on yksi rivi tekstiä, esimerkiksi katuosoite, kaupunki, puhelinnumero, nimi, linkki, yms.</li>
+            <li>Monirivinen kenttä tekstille jonka enimmäispituutta ei tiedetä tai jonka tiedetään olevan useita rivejä pitkä. Mikäli tekstin pituus syötettäessä on enemmän kuin mitä kenttään mahtuu kasvaa kentän koko syötettävän tiedon mukaan.</li>
+            <li>Laaja kenttä tekstille jonka tiedetään olevan hyvin pitkä, esimerkiksi tuhansia merkkejä sisältävä kuvausteksti. Mikäli tekstin pituus syötettäessä on enemmän kuin mitä kenttään mahtuu kasvaa kentän koko syötettävän tiedon mukaan.</li>
+          </ul>
+          </p>
+          <p>Tarpeen mukaan syöttökenttiä voidaan sijoittaa lomakkeella vierekkäin tai taulukoihin. Mikäli kenttien välillä on jatkuvuussuhde, esimerkiksi edellisen kentän valintalista määrittelee mitä seuraavaan kenttään voidaan valita tai syöttää, tulee kentät pyrkiä sijoittamaan vierekkäin.
+          <ul>
+            <li>Esimerkki: Käytetään mm. Hakukausi ja -vuosi ja Koulutuksen aloituskausi ja -vuosi kentissä. Tällöin hakukausi on valintalista ja vuosi syöttökenttä.</li>
+            <li>Esimerkki: Käytetään kun syötetään osoitteita (valintakokeiden ja liitteiden yhteydessä). Osoitekenttä, postinumero ja postitoimipaikka ovat vierekkäin.</li>
+            <li>Esimerkki: Käytetään kun syötetään monta samaa arvoa, esim. koulutuksen alkamispäivät, kun on monta jaksoa. 6 kenttää on vierekkäin ja kenttien alapuolella ohjetekstit “jakson 1 alk. pvm” , “jakso 2 alk. pvm”…</li>
+          </ul>
+          </p>
+          <p>Tietojen syötössä hyväksytään aina esitystavan mukainen muotoilu (katso tiedon esitystavat). Mikäli syötettävältä tiedolta vaaditaan määrättyä mittayksikköä tai muuta määrettä, lisätään tunniste syöttökentän viereen oikealle puolelle, esimerkiksi mittayksiköt tai kappalemäärä (kpl). </p>
+          
+          <div class="well"> <i><b>Esimerkki: Kenttien ja nimiöiden tasaus lomakkeella</b></i><br>
+            <img src="img/lomake_kenttientasaus.png" width="386" height="108"> </div>         
+          
+           <div class="well"> <i><b>Esimerkki: Kenttien sijoittaminen vierekkäin lomakkeella</b></i><br>
+            <img src="img/lomake_kentatvierekkain.png" width="290" height="46"> </div> 
+                     
+          <h3>Tietojen pakollisuus</h3>
+          <p>Pakolliset tiedot ja kentät merkitään tähdellä (*) syöttökentän nimen jälkeen. Selite tähti-merkin käyttöön esitetään lomakkeen yläosassa.</p>
+          <p>Oppijan palvelussa tietojen pakollisuutta korostetaan edelleen lisäämällä suluissa “pakollinen” teksti kentän nimiön tai kysymyksen perään?</p>
+          <h3>Kenttäkohtaiset ohjeet</h3>
+          <p>Kun syötettävältä tiedolta vaaditaan tiettyä sisältöä, muotoilua tai järjestystä tai syötteellä on maksimipituus, annetaan muotoilusta aina ohje ja esimerkki syöttökentän yhteydessä kentän alapuolella. Esimerkiksi ”Kentän maksimipituus on 1500 merkkiä.”  Mikäli kenttä on korkea, tulee ohjeteksti sijoittaa kentän yläpuolelle.</p>
+          <p>Ohjeiden määrittämistä suositellaan sillä niiden avulla edistetään tietojen yhdenmukaisuutta ja oikeellisuutta. Samaa tietoa voidaan tarkastella ja päivittää eri henkilöiden toimesta ja ohje kertoo tällöin alkuperäisen ajatuksen siitä mitä ja miten tietoa on tarkoitus tallentaa.</p>
+          <h3>Täyttöohje</h3>
+          <p>Käyttöliittymässä suositellaan ensisijaisesti ohjeistamaan käyttäjää kenttäkohtaisilla ohjeilla, mutta tarvittaessa voidaan käyttää myös lomake- tai asiakokonaisuuskohtaisia ohjeita. Tällainen kenttäkohtaisia ohjeita kattavampi täyttöohje tarjotaan kysymysmerkki-kuvakkeesta. Kuvake sijoitetaan lomakkeen oikeaan ylälaitaan tai asiakokonaisuuden kohdalle oikeaan laitaan. Se avaa uuden ikkunan poikkeuksellisesti uuteen selainikkunaan, joka sisältää koko lomakkeen tai ko asiakokonaisuuden syöttökenttien täyttöohjeet.</p>
+          
+          <div class="well"> <i><b>Esimerkki: Kenttäkohtainen täyttöohje</b></i><br>
+            <img src="img/ohje.png" width="761" height="91"> </div>          
+          
+          <h3>Tuettu tietojen syöttö</h3>
+          <p>Käyttäjää tulee tukea numerosarjojen ja vastaavien tietojen syötössä aina kun se on mahdollista. Esimerkiksi postinumeroa ei tulisi pakottaa syöttämään itse, vaan käyttäjä voisi syöttää katuosoitteen ja paikkakunnan ja järjestelmä hakee postinumeron. Sama organisaatiokoodien ja koulutuskoodien hakemisessa, käyttäjälle tulee tarjota hakutoiminto tueksi.</p>
+          <h3>Tabulointijärjestys</h3>
+          <p>Lomakkeiden kenttien välillä tulee voida liikkua käyttäen siirtymiseen tabulaattoria näppäimistöltä. Tabulointijärjestyksen tulee olla sama kuin lomakekenttien järjestys näytöllä järjestyksessä ylhäältä alas ja vasemmalta oikealle.</p>
+          <h3>Yhdistetyt syöttökentät</h3>
+          <p>Lomakkeen syöttökenttiä voidaan yhdistellä dynaamisesti jolloin käyttäjän valinta vaikuttaa kenttien pakollisuuteen ja/tai syöttökenttien määrään. Esimerkiksi käyttäjältä voidaan ensin valintanapilla kysyä vaihtoehtoa jonka jälkeen kullekin vaihtoehdolle esitetään omat syöttökentät ja pakollisuudet. Tällöin toisten vaihtoehtojen pakollisuudet eivät aiheuta virheilmoitusta.</p>
+          <h3>Välilehtikontrolli kieliversioiden syöttämisessä</h3>
+          <p>Välilehtiä käytetään kieliversioiden syöttämisessä silloin, kun samaa sisältöä syötetään useilla kielillä. Tällöin välilehdet nimetään kielten mukaan, esim. suomi, ruotsi ja englanti. Tyhjällä lomakkeella näytetään aina vähintään käyttöliittymäkielen mukainen välilehti ja syöttökentät.</p>
+          <p>Jos virkailijalle tarjotaan mahdollisuus lisätä uusia kieliä, äärioikealla oleva välilehti merkitään plusmerkillä (+). Plusmerkki-välilehdellä esitetään yläosassa valintalista kielen valintaan. Valinnan jälkeen fokus siirtyy kielen mukaiselle välilehdelle ja välilehdellä näytetään syöttökentät.</p>
+          <p>Kielivälilehdillä esitetään aina samat syöttökentät kaikilla valituilla kielillä. Virkailija tietää tarkastelemansa välilehden perusteella, mitkä tiedot syötetään jokaisella kielellä.</p>
+          <p>Mikäli kieliversioita tulee syöttää käytetään välilehtikontrollia vaikka lomake olisi muutenkin jo jaettu välilehtiin. Kieliversioiden välilehtikontrolli toistetaan kaikilla välilehdillä joilla on tietoja joista kieliversiot tarvitaan.</p>
+          <h3>Lisää syöttökenttä</h3>
+          <p>Käyttäjä voi lisätä samalle nimiölle uuden syöttökentän kun on tarpeellista tallentaa useita kirjauksia samasta tiedosta, esimerkiksi useita puhelinnumeroita. Tällöin syöttökentän vieressä oikealla puolen esitetään linkki, jossa teksti Lisää
+            <lisättävän_tiedon_määre>
+            , esimerkiksi: Lisää puhelinnumero. Kun käyttäjä valitsee linkin lisätään samalle nimiölle uusi syöttökenttä.</p>
+          <h3>Lisää kohde</h3>
+          <p>Toisinaan on tarpeellista mahdollistaa käyttäjälle laajempien kokonaisuuksien lisääminen, kuten esimerkiksi uuden valintakokeen lisääminen kaikkine kenttinen mitä sen yhteyteen kuuluu. Vaikka nämä ratkaisut ovat hyvin tapauskohtaisia, noudatetaan niissä seuraavia ohjeita:
+          <ul>
+            <li>Lisäämiseen käytetään Lisää-painiketta joka nimetään asianmukaisesti</li>
+            <li>Käytetään välilehtikontrollia kuten kieliversioita lisättäessä. Välilehdet nimetään automaattisesti tarkoituksenmukaisesti.</li>
+          </ul>
+          </p>
+        </div>
+        <h2 id="muokkaaminen">Tietojen muokkaaminen (Lomake)</h2>
+        <div class="well">
+          <p>Kun tallennettua tietoa muokataan tarjotaan käyttäjälle sama lomake tallennetuilla tiedoilla. Lomake käyttäytyy kuten yllä on määritetty.
+            Tarkastelunäkymästä voidaan avata muokkaustila suoraan tiettyyn välilehteen asiakokonaisuuksittain. </p>
+        </div>
+        <h2 id="poistaminen">Tietojen poistaminen</h2>
+        <div class="well">
+          <p>Yksittäisiä tietoja voidaan poistaa tietojen muokkaamisen yhteydessä lomakkeella tyhjentämällä syöttökenttiä ja tallentamalla lomake uudestaan. Vastaavalla tavalla voidaan poista valintalistojen valintoja, kieliversioita, ajankohtia, tai muita tietoja. Lomakkeella tapahtuvaa tietojen poistamista ei varmisteta erikseen vaan se tapahtuu tallennuksen yhteydessä tapahtuvan syötteiden tarkistuksen muodossa ainoastaan.</p>
+          <p>Kun poistetaan kokonaisia tieto-objekteja, kuten koulutus tai organisaatio, tehdään poistaminen tarkastelu- tai hakutulosnäkymässä joko yksittäisenä valintana valikkokuvakkeella tai Poista-painikkeella yksitellen tai monivalintaa käyttäen. Tällöin tietojen poistaminen vahvistetaan varmistus-dialogilla.</p>
+          <p>Käyttöoikeuksilla voidaan rajoittaa poisto-toimintoa käyttäjäkohtaisesti.</p>
+        </div>
+      </div>
+    </div>
+    <!-- END ROW --> 
+    
+  </div>
+  <!-- END SISÄLTÖOSA span10 --> 
+</div>
+<!-- END container--> 
+<script src="http://code.jquery.com/jquery-latest.js"></script> 
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

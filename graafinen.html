@@ -1,0 +1,837 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Opintopolku tyyliopas - Visuaalinen tyyli</title>
+        <link href="css/bootstrap-combined.css" rel="stylesheet"  media="all">
+        <link href="css/css-tyylikirjasto-virkailija.css" rel="stylesheet" media="all">
+        <link rel="stylesheet" href="fontello/css/fontello.css">
+        <!-- ikoniresurssi -->
+
+        <!-- styles -->
+        <style>
+            .well {
+                background: #ffffff;
+            }
+            i {
+                padding-right: 0.20em;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <!-- container -->
+            <div class="navbar"> <!-- NAVI -->
+                <div class="navbar-inner"> <a class="brand" href="#">Opintopolku.fi tyyliopas</a>
+                    <ul class="nav">
+                        <li><a href="index.html">Johdanto</a></li>
+                        <li><a href="tietojen-esittaminen.html">Tietojen esittäminen</a></li>
+                        <li><a href="tietojen-lisaaminen.html">Tietojen muokkaaminen</a></li>
+                        <li><a href="toiminnalliset-komponentit.html">Toiminnalliset komponentit</a></li>
+                        <li><a href="ilmoitukset-indikaattorit.html">Ilmoitukset ja indikaattorit</a></li>
+                        <li><a href="navigointi.html">Navigointi</a></li>
+                        <li><a href="sivupohjat.html">Sivupohjat</a></li>
+                        <li class="active"><a href="graafinen.html">Visuaalinen tyyli</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span2">
+                    <ul class="nav nav-tabs nav-stacked">
+                        <li><a href="#logo">Logo</a></li>
+                        <li><a href="#varit">Värit</a></li>
+                        <li><a href="#ylatunniste">Ylätunniste</a></li>
+                        <li><a href="#navigaatio">Navigaatio</a></li>
+                        <li><a href="#footer">Footer</a></li>
+                        <li><a href="#nappulat">Painikkeet</a></li>
+                        <li><a href="#nappulat-ikonit">Painikkeet + ikonit</a></li>
+                        <li><a href="#lomake">Lomakekentät</a></li>
+                        <li><a href="#typografia">Typografia</a></li>
+                        <li><a href="#linkit">Linkit</a></li>
+                        <li><a href="#alertit">Alertit</a></li>
+                        <li><a href="#dialogit">Dialogit</a></li>
+                        <li><a href="#tabit">Tabit</a></li>
+                        <li><a href="#hr">HR</a></li>
+                        <li><a href="#taulukot">Taulukot</a></li>
+                        <li><a href="#murupolku">Murupolku</a></li>
+                        <li><a href="#muuta">Muuta</a></li>
+                        <li><a href="#sivutus">Sivutus</a></li>
+                        <li><a href="#labelit">Laput</a></li>
+                        <li><a href="#containerit">Containerit</a></li>
+                    </ul>
+                </div>
+                <div class="span10">
+                    <div class="row-fluid"> <!-- ROW -->
+                        <h1>Visuaalinen tyyli ja graafiset elementit</h1>
+                        <hr>
+                        <p>Tässä esitellään Oppijan verkkopalvelun ja Virkailijan työpöytäpalvelun visuaaliset elementit.</p>
+                        <p>Osan tässä dokumentissa esiteltyjen elementtien käyttö edellyttää että käytössä on Bootstrap web-kehitysympäristö (Bootstrap versio 2.3.1) tai joku muu Bootstrapin css-kirjastoa käyttävä kehitysympäristö, kuten AngularJS. Jos kuitenkin kehitysypäristönä käytetään jotain muuta ympäristöä tai työkalua, on visuaalinen tyyli mahdollista toistaa rakentamalla css-tyylit siten että ne vastaavat tässä esitettyä. Painikkeet (ja muut elementit) on myös mahdollista toteuttaa graafisina bitmap-elementteinä. Tätä ei voi pitää parhaana mahdollisena ratkaisuna koska niiden ulkoasua ei välttämättä saa täysin vastaamaan css-tekniikalla toteutettuja painikkeita.</p>
+                        <p>Tässä dokumentissa on esitelty vain ne bootstrapillä toteuttavat elementit jotka ovat tällä hetkellä Virkailija-palvelussa käytössä. Bootstrap css-kirjasto sisältää lukuisia käyttöliittymäelementtejä jotka on mahdollista muuntaa "virkailija-tyyliseksi". Tämä muuntaminen on tehtävä tapauskohtaisesti jos uusia käyttöliittymäelementtejä halutaan ottaa käyttöön.</p>
+                        <p>Käytännössä virkailija tyylin käyttöönotto tapahtuu siten että perus css-tyylikirjaston lisäksi ladataan css-tyylikirjasto-virkailija.css joka vaihtaa käyttöliittymäelementit virkailija-tyyliin.</p>
+                        <p>Tämän dokumentin alussa kuvataan myös joitakin yleisiä tyyliseikkoja, joita ei ole toteutettu bootstrapilla. Näitä ovat logo, värit, ylätunniste ja footer.</p>
+                        <h2>Yleistä oppijan visuaalisesta tyylistä</h2>
+                        <div class="well">
+                            <p>Oppijan visuaalisen tyylin perusteet ovat yksinkertaisessa ja selkeässä värimaailmassa. Visuaalisia kolmiulotteisuutta imitoivia efektejä käytetään erittäin hillitysti. Painikkeita ja välilehtiä on hiukan korostettu liukuväreillä, muuten väripinnat ovat aina tasaisia.</p>
+                            <p>Kulmien pyöristystä käytetään sisältölaatikoissa, testinsyöttökentissä, painikkeissa ja alerteissa. Kulman pyöristysarvona on silloin 3px.</p>
+                        </div>
+                    </div>
+                    <div class="row-fluid"> <!-- ROW -->
+                        <h2 id="logo">Logo <small></small></h2>
+                        <div class="well"> <img src="img/Opintopolku-FI-225px-50px.png">
+                            <p>Suomenkielinen logo julkista opintopolkua varten, koko 225 x 50 pikseliä.</p>
+                            <img src="img/Studieinfo-SWE-225px-50px.png">
+                            <p>Ruotsinkielinen logo julkista opintopolkua varten, koko 225 x 50 pikseliä.</p>
+                            <p>Logon käyttöä ohjaavat erilliset ohjeet joita tulee aina noudattaa. Logosta ei tule valmistaa uusia versioita muista kuin alkuperäisistä vektorimuodossa olevasta tiedostosta.</p>
+                        </div>
+                    </div>
+                    <!-- END ROW -->
+
+                    <div class="row-fluid"> <!-- ROW -->
+                        <h2 id="varit">Värit <small></small></h2>
+                        <div style="" class="well">
+                            <h5>Yleistä värien käytöstä</h5>
+                            <p>Värejä ei pidä käyttä itsetarkoituksellisesti koristeena vaan niiden käytössä on muistettava funktionaalisuus ja palvelun yhtenäinen ilme.</p>
+                            <p>Pääväri on sininen, joka toimii tunnisteena koko palvelulle ja yhdistää Oppijan ja Virkailijan palvelut. Huomiovärinä toimii keltainen, joka korostaa pääasiallisia toimintoja.</p>
+                            <p>Palvelun tekstit kirjoitetaan pääasiassa mustalla värillä jonka hex-väriarvo on #333333. Tämä hieman vaalennettu musta on miellyttävämpi luettavuudeltaan silmille, mutta kuitenkin riittävä kontrastiltaan.</p>
+                            <!-- <p>Pitäisikö tässä olla jotain saavutettavuudesta?</p>-->
+                            <p>Oheinen kuva osoittaa miten värit sijoittuvat väriympyrälle. Värimuunnelmat on muodostettu säätämällä päävärien, sinisen ja keltaisen, valoisuutta. </p>
+                            <div style="background-color:#149ecb; text-align:center; vertical-align: middle; padding:2em; border-style:solid;
+                                        border-width:5px; border-color:white; box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.5); border-radius:3px;" class="span2">#149ecb</div>
+                            <div style="background-color:#06526B; text-align:center; vertical-align: middle; padding:2em; border-style:solid;
+                                        border-width:5px; border-color:white; box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.5); border-radius:3px; color:#ffffff;" class="span2">#06526B</div>
+                            <div style="background-color:#feedbd; text-align:center; vertical-align: middle; padding:2em; border-style:solid;
+                                        border-width:5px; border-color:white; box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.5); border-radius:3px;" class="span2">#feedbd</div>
+                            <div style="background-color:#feba00; text-align:center; vertical-align: middle; padding:2em; border-style:solid;
+                                        border-width:5px; border-color:white; box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.5); border-radius:3px;" class="span2">#feba00</div>
+                            <div style="background-color:#333333; text-align:center; vertical-align: middle; padding:2em; border-style:solid;
+                                        border-width:5px; border-color:white; box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.5); border-radius:3px; color:#ffffff;" class="span2">#333333</div>
+                            <div class=""> <img style="margin-top:20px" class="img-rounded" src="img/variympyra.png"> </div>
+                        </div>
+                        <!-- END ROW -->
+
+                        <div class="row-fluid"> <!-- ROW -->
+                            <h2 id="ylatunniste">Ylätunniste <small></small></h2>
+                            <div class="well">
+                                <p>Ylätunnisteen korkeus on 95px ja leveys 100% selaimen ikkunan leveydestä. Ylätunnisteen väri on #149ecb. Ylätunnisteessa käytettävän tekstin väri on #ffffff. Palvelun logo sijoitetaan ylätunnisteen vasempaan reunaan. Oikeaan reunaan sijoitetaan sisäänkirjautumistiedot. Kun selaimen ikkunaa suurennetaan leveyssyynnassa, palvelun logon tulisi pysyä asemoituna sisällön vasempaan reunaan. Logon leveys on 225px ja korkeus 50px, jolloin logon marginaalit ovat ylätunnisteessa seuraavat: ylämarginaali: 20px, alamarginaali: 25px ja vasen marginaali: 10px.</p>
+                                <p>
+                                    <h5>Virkailijan ylätunniste</h5>
+                                <img src="img/Ylatunniste-virkailija.png">
+                                <h5>Oppijan ylätunniste</h5>
+                                <img src="img/Ylatunniste-oppija.png">
+                            </p>
+                        </div>
+                    </div>
+                    <!-- END ROW -->
+
+                    <div class="row-fluid"> <!-- ROW -->
+                        <h2 id="navigaatio">Navigaatio <small></small></h2>
+                        <div class="well">
+                            <p>Allaolevassa kuvissa on kuvattu ylänavigaation tiedot. Ylänavigaatio on visuaaliselta ulkoasultaan identtinen virkailijan ja oppijan palveluissa. Navigaation tekstisisältö on kuitenkin molemmissa erilainen. Tässä esitetyt navigaation sisältötekstit ovat ainoastaan esimerkkejä ja oikea sisältö pitää aina tarkistaa palveluiden sisällöntuottajilta.</p>
+                            <h5>Virkailijan ylänavigaation idle-tila</h5>
+                            <img src="img/Ylanavi-virkailija-menu-idle.png">
+                            <h5>Virkailijan ylänavigaation hover-tila</h5>
+                            <img src="img/Ylanavi-virkailija-menu-hover.png">
+                            <h5>Virkailijan ylänavigaation active-tila</h5>
+                            <img src="img/Ylanavi-virkailija-menu-active.png"> </div>
+                    </div>
+                    <!-- END ROW -->
+
+                    <div class="row-fluid"> <!-- ROW -->
+                        <h2 id="murupolku">Murupolku <small></small></h2>
+                        <div class="well">
+                            <p>Angularin murupolkua ei ole muokattu virkailijan tyyliin, mutta oheisen kuvan mukaan sen voi tehdä tarvittaessa.</p>
+                            <img src="img/murupolku.png">
+                            <h5>Murupolun kuvaresurssit</h5>
+                            <p><img src="img/breadcrumb-home-icon.png"></p>
+                            <p>Koti-ikoni</p>
+                            <p><img src="img/breadcrumb-arrow-icon.png"></p>
+                            <p>Väkänen</p>
+                        </div>
+                    </div>
+                    <!-- END ROW -->
+
+                    <div class="row-fluid"> <!-- ROW -->
+                        <h2 id="footer">Footer <small></small></h2>
+                        <div class="well">
+                            <p>Footer koostuu laatikosta jossa voi tarpeen mukaan näyttää linkit kaikkiin Virkailijan palvelun sovelluksiin. Footerin alapuolelle sijoitetaan alatunniste jossa näytetään Opetushallituksen ja Opetus- ja kulttuuriministeriön logot ja osoitteet. Näiden edellämainittujen alle sijoitetaan copyright-lauseke.</p>
+                            <img src="img/Virkailija_Footer_17.12.2013.png">
+                            <h5>Footerin kuvaresurssit</h5>
+                            <p>Kannattaa huomata että logoja ei tule muokata. Jos on tarve käyttää pienempää tai isompaa logoa ne tulee valmistaa käyttämällä alkuperäistä vektorimuotoista tiedostoa.</p>
+                            <p><img src="img/OPH_logo.png"></p>
+                            <p>OPH logo</p>
+                            <p><img src="img/OKM_logo.png"></p>
+                            <p>OKM logo</p>
+                        </div>
+                    </div>
+                    <!-- END ROW -->
+
+                    <div class="row-fluid"> <!-- ROW -->
+
+                        <h2 id="nappulat">Painikkeet</h2>
+                        <div class="well">
+                            <p>Painikkeissa on käytössä kaksi perustyyliä, joita voi käyttää kahdessa koossa. Näiden luokat ovat bootstrap-koodissa <code>.btn</code> ja <code>.btn-primary</code>. Isomman painikkeen saa lisäämällä koodiin luokan <code>.btn-large</code></p>
+                            <p>Kultainen painike valitaan tärkeimmälle toiminnolle. Sininen painike vähemmän tärkeille toiminnoille.</p>
+                            <p>
+                                <button class="btn">Painike default</button>
+                                <button class="btn" disabled>Painike disabled</button>
+                            </p>
+                            <p>
+                                <button class="btn btn-primary">Painike primary</button>
+                                <button class="btn btn-primary" disabled>Painike primary disabled</button>
+                            </p>
+                            <p>
+                                <button class="btn btn-large">Painike default iso</button>
+                                <button class="btn btn-large" disabled>Painike default iso disabled</button>
+                            </p>
+                            <p>
+                                <button class="btn btn-primary btn-large">Painike primary iso</button>
+                                <button class="btn btn-primary btn-large" disabled>Painike primary iso disabled</button>
+                            </p>
+                            <h5>Milloin iso painike?</h5>
+                            <p>Isoa painiketta voi käyttää näkymissä, joissa on vain vähän toimintoja ja pieni painike näyttäisi suhteettoman pieneltä muuten tyhjällä sivulla. Esimerkiksi jos näkymässä on vain yksi hakukenttä ja painike. Hakukenttä on kuitenkin silloin oltava suhteessa painikkeen kokoon. Katso esimerkki kohdasta <a href="#lomake">lomakekentät</a></p>
+                            <h5>Oppijan palvelun painikkeet</h5>
+                            <p>Oppijan palvelussa on tällä hetkellä käytössä hieman virkailijan tyylistä poikkeavat painikkeet. Sininen default-painike on korvattu harmaalla painikkeella. css-tyylikirjasto-virkailija.css tyylitiedostossa harmaa painike on määritelty kohdassa <code>.btn-harmaa.</code> ja kyseistä luokkaa käyttämällä harmaan painikkeen voi ottaa angular/bootstrap ympäristössä käyttöön.</p>
+                            <p>
+                                <button class="btn btn-harmaa">Painike default</button>
+                                <button class="btn" disabled>Painike disabled</button>
+                            </p>
+                            <p>
+                                <button class="btn btn-primary">Painike primary</button>
+                                <button class="btn btn-primary" disabled>Painike primary disabled</button>
+                            </p>
+                            <p>
+                                <button class="btn btn-large btn-harmaa">Painike default iso</button>
+                                <button class="btn btn-large" disabled>Painike default iso disabled</button>
+                            </p>
+                            <p>
+                                <button class="btn btn-primary btn-large">Painike primary iso</button>
+                                <button class="btn btn-primary btn-large" disabled>Painike primary iso disabled</button>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- END ROW -->
+
+                    <div class="row-fluid"> <!-- ROW -->
+                        <h2 id="nappulat-ikonit">Painike + ikoni</h2>
+                        <div class="well">
+                            <p>Jos painikkeeseen on tarve lisätä ikoni sen voi tehdä käyttämällä bootstrapin normaalia ikonikirjastoa. Esimerkiksi: <code>class="icon-plus-sign"</code>. Jos painikkeessa on tekstiä on tekstin ja ikonin väliin jätettävä välilyönti.</p>
+                            <p>
+                                <div>
+                                    <h5>Painike asioiden lisäämiseen</h5>
+                                    <button class="btn">Painike default <i class="icon-plus-sign"></i></button>
+                                    <button class="btn btn-primary">Painike primary <i class="icon-plus-sign"></i></button>
+                            </div>
+                            <div>
+                                <h5>Painike Taaksepäin/Eteenpäin</h5>
+                                <button class="btn"><i class="icon-arrow-left"></i></button>
+                                <button class="btn"><i class="icon-arrow-right"></i></button>
+                                <button class="btn btn-primary"><i class="icon-arrow-left"></i></button>
+                                <button class="btn btn-primary"><i class="icon-arrow-right"></i></button>
+                            </div>
+                            <div>
+                                <h5>Muita esimerkkejä</h5>
+                                <p>Nämä eivät ole tällä hetkellä käytössä, mutta niitä voi käyttää tarpeen vaatiessa.</p>
+                                <button class="btn">Sähköposti <i class="icon-envelope"></i></button>
+                                <button class="btn">Käyttäjä <i class="icon-user"></i></button>
+                                <button class="btn">Hae <i class="icon-search"></i></button>
+                                <button class="btn">Lataa <i class="icon-download"></i></button>
+                                <button class="btn">Tulosta <i class="icon-print"></i></button>
+                                <button class="btn">Muokkaa <i class="icon-pencil"></i></button>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+                <!-- END ROW -->
+
+                <div class="row-fluid"> <!-- ROW -->
+                    <h2 id="lomake">Lomakekentät <small></small></h2>
+                    <div class="well">
+                        <p>Virkailijan lomakkeissa tulee käyttää keskitettyä tyyliä, jossa labelit tasataan oikeaan ja syöttökentät vasempaan. Luokka <code>.form-horizontal</code>.</p>
+                        <hr>
+                        <form class="form-horizontal">
+                            <div class="control-group">
+                                <label for="YourName" class="control-label">Sähköposti</label>
+                                <div class="controls">
+                                    <input name="YourName" id="YourName" type="text" placeholder="Kirjoita jotain">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label for="YourLastName" class="control-label">Salasana</label>
+                                <div class="controls">
+                                    <input name="YourLastName" id="YourLastName" type="text" placeholder="Kirjoita jotain">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        Muista tiedot</label>
+                                </div>
+                            </div>
+                            <div class="controls">
+                                <label class="radio">
+                                    <input type="radio">
+                                    Muista tiedot</label>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn">Peruuta</button>
+                                <button type="submit" class="btn btn-primary">Kirjaudu</button>
+                            </div>
+                        </form>
+                        <hr>
+                        <p>Hakukenttä ja painike yhdistelmä.</p>
+                        <form class="form-search">
+                            <input type="text" class="input-medium">
+                            <button type="submit" class="btn btn-primary">Hae</button>
+                            <a href="#" type="submit" class="">Edistynyt haku</a>
+                        </form>
+                        <hr>
+                        <p>Hakukenttä ja painike, joiden kokoa on kasvatettu. Hakukentän kokoa ei voi tällä hetkellä kasvattaa angularin css tyyleillä, tässä tapauksessa kokoa on muutettu vastaamaan painikkeen kokoa antamalla tekstikentälle padding-arvoksi 11px. Painikkeen koko on muutettu isommaksi lisäämällä sille luokka <code>btn-large</code></p>
+                        <form class="form-search">
+                            <input type="text" style="padding:11px" class="input-medium">
+                            <button type="submit" class="btn btn-primary btn-large">Hae</button>
+                        </form>
+                        <hr>
+                        <p>Käyttämällä luokkaa <code>.input-append</code> painikkeen voi liittää kiinni syöttökenttään.</p>
+                        <div class="input-append">
+                            <input class="input-medium" id="#" type="text">
+                            <button class="btn btn-primary" type="button">Hae</button>
+                        </div>
+                        <hr>
+                        <p>Jos tilaa on käytössä niukasti, voi käyttää luokkaa <code>.form-inline</code> jolla saa tiviimmän ryhmän. Tätä ei tulisi kuitenkaan käyttää laajojen paljon tietoja sisältävien näkymien sommitteluun, vaan silloin parempi vaihtoehto on ylempänä esitetty keskitetty sommittelu sen ilmavuuden ja helpomman luettavuden takia.</p>
+                        <form class="form-inline">
+                            <input type="text" class="input-small" placeholder="Sähköposti">
+                            <input type="password" class="input-small" placeholder="Salasana">
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                Muista tiedot</label>
+                            <button type="button" class="btn">Peruuta</button>
+                            <button type="submit" class="btn btn-primary">Kirjaudu</button>
+                        </form>
+                        <hr>
+                        <div class="well" style="background:#149ecb; border-style:solid; border-width:1px; border-color:rgba(20, 158, 203, 0.45); border-radius:3px; padding:10px;" >
+                            <p>Esimerkki hakukentästä ylätunnisteessa</p>
+                            <form class="form-search">
+                                <input type="text" class="input-medium">
+                                <button type="submit" class="btn btn-primary">Hae</button>
+                                <a href="#" type="submit" style="color:#ffffff;">Edistynyt haku</a>
+                            </form>
+                        </div>
+                        <hr>
+                        <p>Esimerkki disabloiduista tekstikentistä. Tuotetaan lisäämällä input tagiin parametri <code>disabled</code>.</p>
+                        <div>
+                            <input class="input" id="disabledInput" type="text" placeholder="Disabloitu tekstikenttä" disabled>
+                        </div>
+                        <div>
+                            <textarea name="YourStory" id="YourStory"  rows="5" placeholder="Disabloitu tekstikenttä" disabled></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- END ROW -->
+
+                <div class="row-fluid"> <!-- ROW -->
+                    <h2 id="typografia">Typografia</h2>
+                    <div class="well">
+                        <h3>Virkailijan palvelu</h3>
+                        <h5>Fontstack</h5>
+                        <p>Virkailijan palvelussa on käytössä on seuraavanlainen fontstack: <code>"Helvetica Neue",Helvetica,Arial,sans-serif;</code></p>
+                        <p>Pääasiallinen fontti on Helvetica Neue. Jos sitä ei löydy koneesta yritetään käyttää seuraavia fontteja: Helvetica, Arial tai geneerinen sans-serif fontti.</p>
+                        <h1>H1 Otsikko. 28px</h1>
+                        <a href="#">
+                            <h1>H1 Otsikko. 28px</h1>
+                        </a>
+                        <p>H1 tason otsikko. Koko: 28px, väri: #333333, tyyli: bold.</p>
+                        <h2>H2 Otsikko. 22px.</h2>
+                        <a href="#">
+                            <h2>H2 Otsikko. 22px.</h2>
+                        </a>
+                        <p>H2 tason otsikko. Koko: 22px, väri: #333333, tyyli: bold.</p>
+                        <h3>H3 Otsikko. 18px.</h3>
+                        <a href="#">
+                            <h3>H3 Otsikko. 18px.</h3>
+                        </a>
+                        <p>H3 tason otsikko. Koko: 18px, väri: #333333, tyyli: bold.</p>
+                        <h4>H4 Otsikko. 16px.</h4>
+                        <a href="#">
+                            <h4>H4 Otsikko. 16px.</h4>
+                        </a>
+                        <p>H4 tason otsikko. Koko: 16px, väri: #333333, tyyli: bold.</p>
+                        <h5>H5 Otsikko. 13px.</h5>
+                        <a href="#">
+                            <h5>H5 Otsikko. 13px.</h5>
+                        </a>
+                        <p>H5 tason otsikko. Koko: 13px, väri: #333333, tyyli: bold.</p>
+                        <h6>H6 Otsikko. 12px.</h6>
+                        <a href="#">
+                            <h6>H6 Otsikko. 12px.</h6>
+                        </a>
+                        <p>H6 tason otsikko. Koko: 12px, väri: #333333, tyyli: bold.</p>
+                        <h5>Body-fontti</h5>
+                        <p>Tekstin koko 13px, väri #333333, tyyli normal ja riviväli 20px.</p>
+                        <p>Suhteellisia mittayksiköitä voi myös käyttää koon määrittämisessä kunhan ne tuottavat selaimessa vastaavankokoisen lopputuloksen.</p>
+                        <h5>Esimerkkitekstiä</h5>
+                        <p>Jukolan talo, eteläisessä Hämeessä, seisoo erään mäen pohjaisella rinteellä, liki Toukolan kylää. Sen läheisin ympäristö on kivinen tanner, mutta alempana alkaa pellot, joissa, ennenkuin talo oli häviöön mennyt, aaltoili teräinen vilja. Peltojen alla on niittu, apilaäyräinen, halkileikkaama monipolvisen ojan; ja runsaasti antoi se heiniä, ennenkuin joutui laitumeksi kylän karjalle. Muutoin on talolla avaria metsiä, soita ja erämaita, jotka, tämän tilustan ensimmäisen perustajan oivallisen toiminnan kautta, olivat langenneet sille osaksi jo ison-jaon käydessä entisinä aikoina. Silloinpa Jukolan isäntä, pitäen enemmän huolta jälkeentulevainsa edusta kuin omasta parhaastansa, otti vastaan osaksensa kulon polttaman metsän ja sai sillä keinolla seitsemän vertaa enemmän kuin toiset naapurinsa. Mutta kaikki kulovalkean jäljet olivat jo kadonneet hänen piiristänsä ja tuuhea metsä kasvanut sijaan.—Ja tämä on niiden seitsemän veljen koto, joiden elämänvaiheita tässä nyt käyn kertoilemaan.</p>
+                        <h5>Ohjeteksti kirjoitetaan kursiivilla käyttäen tagia <code>&lt;em&gt;</code> ja luokkaa <code>.muted</code>. Koko 13px. Väri #999999.</h5>
+                        <p class="muted"><em>Ohjeteksti. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</em></p>
+                        <p><strong>Vahvistettu teksti</strong></p>
+                        <p>Numeroimaton lista</p>
+                        <ul>
+                            <li>Juhani</li>
+                            <li>Aapo</li>
+                            <li>Tuomas</li>
+                            <li>Simeoni</li>
+                            <li>Timo</li>
+                            <li>Lauri</li>
+                            <li>Eero</li>
+                            <ul>
+                                <li>Männistön Venla</li>
+                                <li>Lukkari</li>
+                                <li>Rajamäen rykmentti</li>
+                                <li>Viertolan herra</li>
+                                <li>Valko</li>
+                                <li>Killi ja Kiiski</li>
+                                <li>Matti</li>
+                                <li>Jukola</li>
+                                <li>Impivaara</li>
+                                <li>Toukola</li>
+                            </ul>
+                        </ul>
+                        <p>Numeroitu lista</p>
+                        <ol>
+                            <li>Luku</li>
+                            <li>Luku</li>
+                            <li>Luku</li>
+                            <li>Luku</li>
+                            <li>Luku</li>
+                            <li>Luku</li>
+                            <li>Luku</li>
+                        </ol>
+                        <h3>Oppijan palvelu</h3>
+                        <p>Oppijan palvelussa on käytössä seuraavanlainen fontstack: <code>"PT Sans Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;</code>. Otsikkotasot H1 - H3 tuotetaan PTSans Narrow fontilla, H4 - H6 Helvetica Neue fontilla. Lisäksi on käytössä fontti PTSerif Italic korostusteksteissä.</p>
+                        <p>PTSerif ja PTSans fontit ladataan webbifonttina Googlen <a href="https://www.google.com/fonts">Google Fonts</a> palvelusta.</p>
+                        <img src="img/oppija-typografia.png"> </div>
+                </div>
+                <!-- END ROW -->
+
+                <div class="row-fluid"> <!-- ROW -->
+                    <h2 id="linkit">Linkit <small></small></h2>
+                    <div class="well" style="min-height=200px;">
+                        <div class="well" style="border-style:solid; border-width:1px; border-color:rgba(20, 158, 203, 0.45); border-radius:3px; padding:10px;">
+                            <h5>Linkkien värit valkoisella taustalla</h5>
+                            <p>Idle: <a href="#">Lorem ipsum dolor sit amet</a></p>
+                            <p>Hover: <a href="#" style="color:#062B37; text-decoration:underline;">Lorem ipsum dolor sit amet</a></p>
+                            <p>Active: <a href="#" style="color:#06526b; text-decoration:underline;">Lorem ipsum dolor sit amet</a></p>
+                            <p>Visited: <a href="#" style="color:#707070; text-decoration:underline;">Lorem ipsum dolor sit amet</a></p>
+                        </div>
+                        <div class="well" style="border-style:solid; border-width:1px; border-color:rgba(20, 158, 203, 0.45); border-radius:3px; padding:10px;">
+                            <h5>Linkkien värit valkoisella taustalla H1 otsikoissa</h5>
+                            <h1>Idle: <a href="#">Lorem ipsum dolor sit amet</a></h1>
+                            <h1>Hover: <a href="#" style="color:#062B37; text-decoration:underline;">Lorem ipsum dolor sit amet</a></h1>
+                            <h1>Active: <a href="#" style="color:#06526b; text-decoration:underline;">Lorem ipsum dolor sit amet</a></h1>
+                            <h1>Visited: <a href="#" style="color:#707070; text-decoration:underline;">Lorem ipsum dolor sit amet</a></h1>
+                        </div>
+                        <div class="well" style="border-style:solid; border-width:1px; border-color:rgba(20, 158, 203, 0.45); border-radius:3px; padding:10px;">
+                            <h5>Linkkien värit bodytekstin sisällä</h5>
+                            <p>Jukolan talo, eteläisessä Hämeessä, seisoo erään mäen pohjaisella rinteellä, liki Toukolan kylää. Sen läheisin ympäristö on kivinen tanner, mutta alempana alkaa pellot, joissa, ennenkuin talo oli <a style="color:#707070;" href="www.iltalehti.fi">Historia, perinteet ja kulttuuri -teeman mukaista koulutusta järjestävät korkeakoulut</a> häviöön mennyt, aaltoili teräinen vilja. Peltojen alla on niittu, apilaäyräinen, halkileikkaama monipolvisen ojan; ja runsaasti antoi se heiniä, ennenkuin joutui laitumeksi kylän karjalle. Muutoin on talolla avaria metsiä, soita ja erämaita, jotka, tämän tilustan ensimmäisen perustajan oivallisen toiminnan kautta, <a href="www.iltasanomat.fi">Kulttuurintutkimus - ylempi korkeakoulututkinto muualla</a> olivat langenneet sille osaksi jo ison-jaon käydessä entisinä aikoina. Silloinpa Jukolan isäntä, pitäen enemmän huolta jälkeentulevainsa edusta kuin omasta parhaastansa, otti vastaan osaksensa kulon polttaman metsän ja sai sillä keinolla seitsemän vertaa enemmän kuin toiset naapurinsa. Mutta kaikki kulovalkean jäljet olivat jo kadonneet hänen piiristänsä ja tuuhea metsä kasvanut sijaan.—Ja tämä on niiden seitsemän veljen koto, joiden elämänvaiheita tässä nyt käyn kertoilemaan.</p>
+                        </div>
+                        <div class="well" style="background:#149ecb; border-style:solid; border-width:1px; border-color:rgba(20, 158, 203, 0.45); border-radius:3px; padding:10px;" >
+                            <h5>Linkkien värit ylätunnisteessa</h5>
+                            <p>Tummalla taustalla, kuten ylätunnisteessa käytetään aina valkoista ja alleviivattua linkkityyliä.</p>
+                            <p>Idle: <a href="#" style="color:#ffffff;">Lorem ipsum dolor sit amet</a></p>
+                            <p>Hover: <a href="#" style="color:#ffffff; text-decoration:underline;">Lorem ipsum dolor sit amet</a></p>
+                            <p>Active: <a href="#" style="color:#ffffff; text-decoration:underline;">Lorem ipsum dolor sit amet</a></p>
+                            <p>Visited: <a href="#" style="color:#ffffff; text-decoration:underline;">Lorem ipsum dolor sit amet</a></p>
+                        </div>
+                        <div class="well" style="border-style:solid; border-width:1px; border-color:rgba(20, 158, 203, 0.45); border-radius:3px; padding:10px;">
+                            <p>Linkkilistat ja ulkoiset linkit voi varustaa ikonilla, ikoni muodostetaan webfontilla joka kutsutaan resurssikansiosta <code>fontello</code>. Webfontin käyttämiseksi dokumenttiin täytyy lisätä linkki tyylitiedostoon <code>fontello.css</code>. Fontti on optimoitu siten että se sisältää ainoastaan seuraavat merkit:</p>
+                            <p>
+                                <div title="Code: 0xe801" class="the-icons"><i class="icon-link-ext-alt"></i> <span class="i-name">icon-link-ext-alt</span></div>
+                            <div title="Code: 0xe802" class="the-icons"><i class="icon-angle-double-right"></i> <span class="i-name">icon-angle-double-right</span></div>
+                        </p>
+                        <p>Ikoni lisätään seuraavanlaisella koodilla: <code>&lt;i class="icon-link-ext-alt"&gt;</i></code></p>
+                <p>Webfontin käytöstä on se hyöty verrattuna bitmap-ikoniin että se skaalautuu käytetyn tekstin koon mukaan. Eri kokoisille teksteille ei siis tarvitse luoda eri ikoneita ja ikoni skaalautuu myös jos käyttäjä muuttaa tekstin kokoa selaimen kautta.</p>
+                <p> Ikonin ja sitä välittömästi seuraavan tekstin väliin on luotava tyhjää tilaa esimerkiksi seuraavalla tavalla: <code> i { padding-right:0.20em; } </code> </p>
+                <h5>Ikonilla varustetut linkkilistat</h5>
+                <div>
+                    <h5>Lue lisää</h5>
+                    <a href="#"><i class="icon-angle-double-right"></i>Helsingin yliopiston muu koulutus</a></br>
+                <a href="#"><i class="icon-angle-double-right"></i>Historia, perinteet ja kulttuuri -teeman mukainen koulutus muualla</a></br>
+            <a href="#"><i class="icon-angle-double-right"></i>Kulttuurintutkimus - ylempi korkeakoulututkinto muualla</a></br>
+        <a href="#"><i class="icon-angle-double-right"></i>Historia, perinteet ja kulttuuri -teeman mukaista koulutusta järjestävät korkeakoulut</a></br>
+</div>
+<div>
+    <h5>Ulkoisia linkkejä</h5>
+    <a href="#"><i class="icon-link-ext-alt"></i>Helsingin yliopiston muu koulutus</a></br>
+<a href="#"><i class="icon-link-ext-alt"></i>Historia, perinteet ja kulttuuri -teeman mukainen koulutus muualla</a></br>
+<a href="#"><i class="icon-link-ext-alt"></i>Kulttuurintutkimus - ylempi korkeakoulututkinto muualla</a></br>
+<a href="#"><i class="icon-link-ext-alt"></i>Historia, perinteet ja kulttuuri -teeman mukaista koulutusta järjestävät korkeakoulut</a></br>
+</div>
+</div>
+<div class="well" style="border-style:solid; border-width:1px; border-color:rgba(20, 158, 203, 0.45); border-radius:3px; padding:10px;">
+    <h5>Ulkoisia linkkejä tekstipalstan sisällä</h5>
+    <p>Jukolan talo, eteläisessä Hämeessä, seisoo erään mäen pohjaisella rinteellä, liki Toukolan kylää. Sen läheisin ympäristö on kivinen tanner, mutta alempana alkaa pellot, joissa, ennenkuin talo oli <a style="color:#707070;" href="www.iltalehti.fi"><i class="icon-link-ext-alt"></i>Historia, perinteet ja kulttuuri -teeman mukaista koulutusta järjestävät korkeakoulut</a> häviöön mennyt, aaltoili teräinen vilja. Peltojen alla on niittu, apilaäyräinen, halkileikkaama monipolvisen ojan; ja runsaasti antoi se heiniä, ennenkuin joutui laitumeksi kylän karjalle. Muutoin on talolla avaria metsiä, soita ja erämaita, jotka, tämän tilustan ensimmäisen perustajan oivallisen toiminnan kautta, <a href="www.iltasanomat.fi"><i class="icon-link-ext-alt"></i>Kulttuurintutkimus - ylempi korkeakoulututkinto muualla</a> olivat langenneet sille osaksi jo ison-jaon käydessä entisinä aikoina. Silloinpa Jukolan isäntä, pitäen enemmän huolta jälkeentulevainsa edusta kuin omasta parhaastansa, otti vastaan osaksensa kulon polttaman metsän ja sai sillä keinolla seitsemän vertaa enemmän kuin toiset naapurinsa. Mutta kaikki kulovalkean jäljet olivat jo kadonneet hänen piiristänsä ja tuuhea metsä kasvanut sijaan.—Ja tämä on niiden seitsemän veljen koto, joiden elämänvaiheita tässä nyt käyn kertoilemaan.</p>
+</div>
+</div>
+</div>
+<!-- END ROW -->
+
+<div class="row-fluid"> <!-- ROW -->
+    <h2 id="alertit">Alertit <small>eli huomiolaatikot</small></h2>
+    <div class="well">
+        <p>Alertteja varten on joissakin Virkailijasovelluksissa tehty oma komponentti, mutta jos sitä ei ole käytössä, voi käyttää allaolevia bootstrapin virkailija-tyyliin muokattuja komponentteja.</p>
+        <p>Alertteja on käytössä kolme eri väriä, keltainen <code>.alert</code> vihreä <code>.alert-success</code> ja sininen <code>.alert-info</code>. Keltainen ilmoittaa virheestä, vihreä onnistuneesta toiminnosta, sininen on neutraali ilmoitus. Bootstrapin punataustaista alerttia ei käytetä Virkailijan käyttöliittymässä vaan se korvataan keltataustaisella. Ikonin näyttäminen alertin sisällä on suositeltavaa, mutta ei välttämätöntä esimerkiksi tilan säästämiseksi. Jos ikonia käytetään täytyy lisätä luokka <code>.alert-block</code>, joka kasvattaa paddingia alertin sisällä.</p>
+        <h3>Alert ikonin kanssa</h3>
+        <div class="alert alert-block"><img style="margin-right:10px;" src="img/alert-icon28x29.png">Alert Block</div>
+        <div class="alert alert-block alert-success"><img style="margin-right:10px;" src="img/confirm-icon28x29.png">Alert Block success</div>
+        <div class="alert alert-block alert-info"><img style="margin-right:10px;" src="img/info-icon28x29.png">Alert Block info</div>
+        <div class="alert alert-block alert-info"><button type="button" class="close" data-dismiss="alert">&times;</button><img style="margin-right:10px;" src="img/info-icon28x29.png">Alert Block info jonka käyttäjä voi sulkea klikkaamalla ruksia.</div>
+        <p>Ruksi lisätään käyttämällä seuraavaa koodia: </p><code>&lt;button type="button" class="close" data-dismiss="alert"&gt;&times;&lt;/button&gt;</code>
+        <h3>Alert ilman ikonia</h3>
+        <div class="alert">Alert</div>
+        <div class="alert alert-success">Alert success</div>
+        <div class="alert alert-info">Alert info</div>
+        <div class="alert alert-info"><button type="button" class="close" data-dismiss="alert">
+            &times;</button>Alert info jonka käyttäjä voi sulkea klikkaamalla ruksia.</div>
+        <div class="modal" style="position: relative; top: auto; left: auto; right: auto; margin: 0 auto 20px; z-index: 1; max-width: 100%;">
+            <div class="modal-header">
+                <h3>Alert dialogin sisällä</h3>
+            </div>
+            <div class="modal-body">
+            <div class="alert alert-block"><img style="margin-right:10px;" src="img/alert-icon28x29.png">Alert block dialogin sisällä</div>    
+                Qui ipsorum lingua Celtae, nostra Galli appellantur. Quisque ut dolor gravida, placerat libero vel, euismod. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary">Painike</button>
+                <button class="btn btn-primary">Painike</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END ROW -->
+
+<div class="row-fluid"> <!-- ROW -->
+    <h2 id="dialogit">Dialogit <small></small></h2>
+    <div class="well">
+        <p>Bootstrapin perusdialogi. Tuotetaan käyttämällä luokkaa <code>.modal</code>. </p>
+        <div class="modal" style="position: relative; top: auto; left: auto; right: auto; margin: 0 auto 20px; z-index: 1; max-width: 100%;">
+            <div class="modal-header">
+                <h3>Otsikko</h3>
+            </div>
+            <div class="modal-body">Qui ipsorum lingua Celtae, nostra Galli appellantur. Quisque ut dolor gravida, placerat libero vel, euismod. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary">Painike</button>
+                <button class="btn btn-primary">Painike</button>
+            </div>
+        </div>        
+    </div>
+</div>
+<!-- END ROW -->
+
+<div class="row-fluid"> <!-- ROW -->
+    <h2 id="tabit">Tabit <small></small></h2>
+    <div class="well">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab1" data-toggle="tab">Yksi</a> </li>
+            <li><a href="#tab2" data-toggle="tab">Kaksi</a></li>
+            <li><a href="#tab3" data-toggle="tab">Kolme</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab1">
+                <p>Section 1.</p>
+            </div>
+            <div class="tab-pane" id="tab2">
+                <p>Section 2.</p>
+            </div>
+            <div class="tab-pane" id="tab3">
+                <p>Section 3.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END ROW -->
+
+<div class="row-fluid"> <!-- ROW -->
+    <h2 id="hr">&lt;HR&gt; <small>eli vaakaviiva tai erotin</small></h2>
+    <div class="well">
+        <p>Vaakaviivaa voi käyttää erottamaan elementtejä näkymässä silloin kun halutaan esimerkiksi erottaa lomakkeen sisältöryhmiä toisistaan.</p>
+        <hr>
+    </div>
+</div>
+<!-- END ROW -->
+
+<div class="row-fluid"> <!-- ROW -->
+    <h2 id="taulukot">Taulukot <small></small></h2>
+    <div style="background:white;" class="well">
+        <p>Seuraavat taulukkoelementit on muokattu Virkailijatyyliin.</p>
+        <table class="table">
+            <h3>Perustaulukko</h3>
+            <p>Tuotetaan lisäämällä luokka <code>.table</code> <code>&lt;table&gt;</code> elementtiin.</p>
+            <thead>
+                <tr>
+                    <th>One</th>
+                    <th>Two</th>
+                    <th>Three</th>
+                    <th>Four</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Yksi</td>
+                    <td>Kaksi</td>
+                    <td>Kolme</td>
+                    <td>Neljä</td>
+                </tr>
+                <tr>
+                    <td>Un</td>
+                    <td>Dos</td>
+                    <td>Tres</td>
+                    <td>Quatro</td>
+                </tr>
+                <tr>
+                    <td>Ichi</td>
+                    <td>Ni</td>
+                    <td>San</td>
+                    <td>Chi</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped">
+            <h3>Taulukko raidoituksella</h3>
+            <p>Tuotetaan lisäämällä luokka <code>.table-striped</code></p>
+            <thead>
+                <tr>
+                    <th>One</th>
+                    <th>Two</th>
+                    <th>Three</th>
+                    <th>Four</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Yksi</td>
+                    <td>Kaksi</td>
+                    <td>Kolme</td>
+                    <td>Neljä</td>
+                </tr>
+                <tr>
+                    <td>Un</td>
+                    <td>Dos</td>
+                    <td>Tres</td>
+                    <td>Quatro</td>
+                </tr>
+                <tr>
+                    <td>Ichi</td>
+                    <td>Ni</td>
+                    <td>San</td>
+                    <td>Chi</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-hover">
+            <h3>Taulukko jossa hover-tila</h3>
+            <p>Tuotetaan lisäämällä luokka <code>.table-hover</code></p>
+            <thead>
+                <tr>
+                    <th>One</th>
+                    <th>Two</th>
+                    <th>Three</th>
+                    <th>Four</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Yksi</td>
+                    <td>Kaksi</td>
+                    <td>Kolme</td>
+                    <td>Neljä</td>
+                </tr>
+                <tr>
+                    <td>Un</td>
+                    <td>Dos</td>
+                    <td>Tres</td>
+                    <td>Quatro</td>
+                </tr>
+                <tr>
+                    <td>Ichi</td>
+                    <td>Ni</td>
+                    <td>San</td>
+                    <td>Chi</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered">
+            <h3>Taulukko kehyksillä</h3>
+            <p>Tuotetaan lisäämällä luokka <code>.table-bordered</code></p>
+            <thead>
+                <tr>
+                    <th>One</th>
+                    <th>Two</th>
+                    <th>Three</th>
+                    <th>Four</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Yksi</td>
+                    <td>Kaksi</td>
+                    <td>Kolme</td>
+                    <td>Neljä</td>
+                </tr>
+                <tr>
+                    <td>Un</td>
+                    <td>Dos</td>
+                    <td>Tres</td>
+                    <td>Quatro</td>
+                </tr>
+                <tr>
+                    <td>Ichi</td>
+                    <td>Ni</td>
+                    <td>San</td>
+                    <td>Chi</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- END ROW -->
+
+<div class="row-fluid"> <!-- ROW -->
+    <h2 id="muuta">Muuta <small></small></h2>
+    <div class="well">
+        <p>Angularin ikonikirjastoa on mahdollista käyttää selventämään tekstipohjaisia linkkejä ja komentoja. Alla joitakin esimerkkejä. Käytettävissä on myös valkoisia ikoneita joita voi käyttää tummalla taustalla. Valkoiset ikonit tuotetaan käyttämällä luokkaa <code>.icon-white</code>. Alla esimerkkejä mahdollisista käyttötavoista.</p>
+        <div class="well" style="border-style:solid; border-width:1px; border-color:rgba(20, 158, 203, 0.45); border-radius:3px; padding:10px;">
+            <p><i class="icon-remove"></i> Poista</p>
+            <p><i class="icon-trash"></i> Roskakoriin</p>
+            <p><i class="icon-pencil"></i> Muokkaa</p>
+            <p><i class="icon-folder-open"></i> Hakemisto auki</p>
+            <p><i class="icon-folder-close"></i> Hakemisto kiinni</p>
+            <p><i class="icon-file"></i> Tiedosto</p>
+        </div>
+        <div class="well" style="background:#149ecb; border-style:solid; border-width:1px; border-color:rgba(20, 158, 203, 0.45); border-radius:3px; padding:10px;">
+            <p style="color:#ffffff;"><i class="icon-remove icon-white"></i> Poista</p>
+            <p style="color:#ffffff;"><i class="icon-trash icon-white"></i> Roskakoriin</p>
+            <p style="color:#ffffff;"><i class="icon-pencil icon-white"></i> Muokkaa</p>
+            <p style="color:#ffffff;"><i class="icon-folder-open icon-white"></i> Hakemisto auki</p>
+            <p style="color:#ffffff;"><i class="icon-folder-close icon-white"></i> Hakemisto kiinni</p>
+            <p style="color:#ffffff;"><i class="icon-file icon-white"></i> Tiedosto</p>
+        </div>
+    </div>
+</div>
+<!-- END ROW -->
+
+<div class="row-fluid">
+    <h2 id="sivutus">Sivutus<small></small></h2>
+    <div class="well"> Sivutukseen on olemassa seuraavanlainen komponentti, jonka saa käyttöön laittamalla div tagin sisään luokan <code>.pagination</code>. Itse html luodaan käyttämällä <code>&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;</code> rakennetta.
+        <div class="pagination">
+            <ul>
+                <li><a href="#">Edellinen</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">Seuraava</a></li>
+            </ul>
+        </div>
+        <p>Tilan säästämiseksi voi käyttää nuolia &larr; ja &rarr; .</p>
+        <div class="pagination">
+            <ul>
+                <li><a href="#">&larr;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&rarr;</a></li>
+            </ul>
+        </div>
+        <p>Sivutuselementti keskitetään aina sivulle käyttämällä <code>.pagination-centered</code> luokkaa. Kun sivutusta käytetään se on aina sijoitettava sekä sivun ylä-, että alareunaan.</p>
+        <div class="pagination pagination-centered">
+            <ul>
+                <li><a href="#">&larr;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&rarr;</a></li>
+            </ul>
+        </div>
+        <h5>Sivutus ja tulosten järjestäminen</h5>
+        <p>Allaolevassa kuvassa esitetään miten sivutuksen voi toteuttaa käytännössä.</p>
+        <img src="img/Sivutus.png"> </div>
+</div>
+<div class="row-fluid">
+    <h2 id="labelit">Laput <small>eli labelit tai badget</small></h2>
+    <div class="well">
+        <p>Käytetään antamalla <code>div</code>ille luokka <code>.label</code></p>
+        <h5>Käytössä olevat labelit ja esimerkkejä käyttötavasta</h5>
+        <div style="padding:10px 0 10px 0;"><span class="label">Ei nyt haettavissa</span> =hakua ei voi tehdä</div>
+        <hr>
+        <div style="padding:10px 0 10px 0;"><span class="label label-success">Haku käynnissä</span> =haku on käynnissä. <code>.label-success</code></div>
+        <div style="padding:10px 0 10px 0;">Hakemuksen tila: <span class="label label-success">Aktiivinen</span> tallennettu xx.xx.xxxx klo xx.xx</div>
+        <hr>
+        <div style="padding:10px 0 10px 0;"><span class="label label-info">Tulossa hakuun 12.8.2014</span> =tulossa hakuun päivämäärän ilmoittamana päivänä. <code>.label-info</code></div>
+        <hr>
+        <div style="padding:10px 0 10px 0;"><span class="label vrk">VRK</span> =tieto saatu väestörekisterikeskuksesta. Käytetään vartavasten tehtyä luokkaa <code>.vrk</code> jota ei ole bootstrapissa.</div>
+        <div style="padding:10px 0 10px 0;">Koulukatu 1 A 11, 000001, Helsinki <span class="label vrk">VRK</span></div>
+        <hr>
+        <div style="padding:10px 0 10px 0;"><span class="label turva"><img src="img/alert-icon20x21.png"></img> Turvakielto</span> =hakijalla on turvakielto. Käytetään vartavasten tehtyä luokkaa <code>.turva</code> jota ei ole bootstrapissa.</div>
+    <div style="font-size:22px; font-weight:bold;">Wallaton, Waltteri Wille <span class="label turva"><img src="img/alert-icon20x21.png"></img> Turvakielto</span></div>
+<hr>
+<h5 class="text-error">HUOM: Seuraavat bootstrapin labelit eivät ole käytössä</h5>
+<div style="padding:10px 0 10px 0;"><span class="label label-important">Important</span></div>
+<div style="padding:10px 0 10px 0;"><span class="label label-warning">Warning</span></div>
+<div style="padding:10px 0 10px 0;"><span class="label label-inverse">Inverse</span></div>
+</div>
+</div>
+<div class="row-fluid">
+    <h2 id="containerit">Sisältölaatikot <small>eli containerit</small></h2>
+    <div class="well">
+        <p>Sisältölaatikoita voi käyttää tiettyjen teksti tai muiden -sisältöjen nostamiseksi esiin sivuilta. Laatikoissa voi käyttää myös ikoneita huomion lisäämiseksi tai sisällön luokittelemiseksi tiettyyn ryhmään.</p>
+        <div style="margin:10px 0 10px 0;">
+            <div class="notification">
+                <h5>Katso myös muu koulutus</h5>
+                <p>Jukolan talo, eteläisessä Hämeessä, seisoo erään mäen pohjaisella rinteellä, liki Toukolan kylää. Sen läheisin ympäristö on kivinen tanner, mutta alempana alkaa pellot, joissa, ennenkuin talo oli häviöön mennyt, aaltoili teräinen vilja. Peltojen alla on niittu, apilaäyräinen, halkileikkaama monipolvisen ojan; ja runsaasti antoi se heiniä, ennenkuin joutui laitumeksi kylän karjalle.</p>
+            </div>
+        </div>
+        <div style="margin:10px 0 10px 0;">
+            <div class="notification"> <img src="img/alert-icon28x29.png">
+                <h5>Huomio, tärkeää tietoa</h5>
+                <p>Jukolan talo, eteläisessä Hämeessä, seisoo erään mäen pohjaisella rinteellä, liki Toukolan kylää. Sen läheisin ympäristö on kivinen tanner, mutta alempana alkaa pellot, joissa, ennenkuin talo oli häviöön mennyt, aaltoili teräinen vilja. Peltojen alla on niittu, apilaäyräinen, halkileikkaama monipolvisen ojan; ja runsaasti antoi se heiniä, ennenkuin joutui laitumeksi kylän karjalle.</p>
+            </div>
+        </div>
+        <div style="margin:10px 0 10px 0;">
+            <div class="infobox">
+                <h5>Lisätietoa</h5>
+                <p>Jukolan talo, eteläisessä Hämeessä, seisoo erään mäen pohjaisella rinteellä, liki Toukolan kylää. Sen läheisin ympäristö on kivinen tanner, mutta alempana alkaa pellot, joissa, ennenkuin talo oli häviöön mennyt, aaltoili teräinen vilja. Peltojen alla on niittu, apilaäyräinen, halkileikkaama monipolvisen ojan; ja runsaasti antoi se heiniä, ennenkuin joutui laitumeksi kylän karjalle.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid"> 
+<h2 id="xxx">Tooltip <small></small></h2>
+<div class="well">
+    <p>Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit <a href="#" data-tooltip="Fermentum Fringilla Cras" class="glossaryLink">AMK</a>. Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. <a href="#" data-tooltip="Quam Ridiculus Ultricies Sit" class="glossaryLink">Duis</a> mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+    </div>
+</div>
+
+<!--
+<div class="row-fluid"> 
+<h2 id="xxx">XXX <small></small></h2>
+<div class="well"></div>
+</div> 					    
+--> 
+
+</div>
+<!-- end span10 --> 
+</div>
+<!--  end outer row--> 
+</div>
+<!-- END container--> 
+<script src="http://code.jquery.com/jquery-latest.js"></script> 
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

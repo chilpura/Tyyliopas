@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opintopolku tyyliopas - Sivupohjat</title>
+<style type="text/css"></style>
+<link href="css/bootstrap-combined.css" rel="stylesheet" type="text/css">
+<link href="css/css-tyylikirjasto-virkailija.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.well {
+	background: white;
+}
+
+</style>
+</head>
+<body>
+<div class="container-fluid"> 
+  <!-- container -->
+  <div class="navbar"> <!-- PÄÄNAVI -->
+    <div class="navbar-inner"> <a class="brand" href="#">Opintopolku.fi tyyliopas</a>
+      <ul class="nav">
+        <li><a href="index.html">Johdanto</a></li>
+        <li><a href="tietojen-esittaminen.html">Tietojen esittäminen</a></li>
+        <li><a href="tietojen-lisaaminen.html">Tietojen muokkaaminen</a></li>
+        <li><a href="toiminnalliset-komponentit.html">Toiminnalliset komponentit</a></li>
+        <li><a href="ilmoitukset-indikaattorit.html">Ilmoitukset ja indikaattorit</a></li>
+        <li><a href="navigointi.html">Navigointi</a></li>
+		 <li class="active"><a href="sivupohjat.html">Sivupohjat</a></li>
+        <li><a href="graafinen.html">Visuaalinen tyyli</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- END PÄÄNAVI -->
+  
+  <div class="row-fluid"> 
+    <!-- CONTAINER -->
+    <div class="span2"> <!-- SIVUNAVI -->
+      <ul class="nav nav-tabs nav-stacked">
+        <li><a href="#sivupohja">Yleinen sivupohja</a></li>
+        <li><a href="#ylatunniste">Ylätunniste</a></li>
+        <li><a href="#navigointipalkki">Navigointipalkki</a></li>
+        <li><a href="#alatunniste1">Alatunniste 1</a></li>
+        <li><a href="#alatunniste2">Alatunniste 2</a></li>
+        <li><a href="#hakutulosnakyma">Hakutulosnäkymä</a></li>
+        <li><a href="#lomakenakyma">Lomakenäkymä</a></li>
+        <li><a href="#tarkastelunakyma">Tarkastelunäkymä</a></li>
+      </ul>
+    </div>
+    <!-- END SIVUNAVI -->
+    
+    <div class="span10">
+      <div class="row-fluid">
+        <h1 id="asemointi">Sivujen asemointi ja yleiset sivupohjat</h1>
+        <hr>
+        <p>Käyttöliittymän sivujen asemoinnissa noudatetaan 16 kolumnin grid-mallia. Sivujen vaakasuuntainen asemointi on optimoitu 960 px näyttöleveydelle. Vasemmalle ennen ensimmäistä kolumnia jätetään 10px marginaali, ja oikealle viimeisen kolumnin jälkeen samoin. Yhden kolumnin leveys on 40px ja kolumnien väliin jätetään 20px marginaali. Skaalaaminen muihin sivuleveyksiin toimii suhteellisten mittojen kautta: Yhden kolumnin leveys on 4.25% ja kolumnien välinen marginaali 2.0% sivuleveydestä.</p>
+        <h2 id="sivupohja">Yleinen sivupohja</h2>
+        <div class="well">
+          <p>Kaikki käyttöliittymän sivut noudattavat yleistä sivupohjaa. Se sisältää ylhäältä alaspäin lueteltuna seuraavat elementit:
+          <ul>
+            <li>Ylätunniste</li>
+            <li>Navigointipalkki</li>
+            <li>Sisältöalue</li>
+            <li>Alatunniste 1</li>
+            <li>Alatunniste 2</li>
+          </ul>
+          </p>
+          <p>Alatunniste 1 on käytössä ainoastaan Oppijan palvelussa.</p>
+          <p>Poikkeuksen yleiseen sivupohjaan tekee virkailijapalvelun aloitussivu, jossa navigointipalkkia ei näytetä, koska virkailijapalvelun navigaatio on käytettävissä vasta sisäänkirjautumisen jälkeen.</p>
+          <p>Sisältöalueella käytetään erilaisia sivupohjia näkymän käyttötarkoituksen mukaan. Katso: Sivupohjat. Näkymä voidaan sisältöalueen osalta tarvittaessa rakentaa myös vapaasti käyttäen grid-mallia vaikka suositeltavaa onkin käyttää määritettyjä sivupohjia.</p>
+          <p>Yleisen sivupohjan asemointimääritykset ovat seuraavat:
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Elementin nimi</th>
+                <th>Leveys kolumneissa</th>
+                <th>Leveys pikseleissä</th>
+                <th>Leveys prosenteissa sivun koko leveydestä</th>
+                <th>Korkeus pikseleissä</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Ylätunniste</strong></td>
+                <td>16</td>
+                <td>960 px</td>
+                <td>100%</td>
+                <td>96 px</td>
+              </tr>
+              <tr>
+                <td><strong>Navigointipalkki</strong></td>
+                <td>16</td>
+                <td>960 px</td>
+                <td>100%</td>
+                <td>36 px</td>
+              </tr>
+              <tr>
+                <td><strong>Alatunniste 1</strong></td>
+                <td>16</td>
+                <td>960 px</td>
+                <td>100%</td>
+                <td>joustava</td>
+              </tr>
+              <tr>
+                <td><strong>Alatunniste 2</strong></td>
+                <td>14</td>
+                <td>820 px</td>
+                <td>87,23%</td>
+                <td>joustava</td>
+              </tr>
+            </tbody>
+          </table>
+          </p>
+          <p>Yleinen sivupohja:<br>
+            <img src="img/sivupohja.png"></p>
+        </div>
+        <h2 id="ylatunniste">Ylätunniste</h2>
+        <div class="well">
+          <p>Virkailijapalvelujen ylätunniste sisältää:
+          <ul>
+            <li>Opintopolku-logo vasemmassa laidassa.</li>
+            <li>Kirjaudu ulos linkki oikeassa laidassa, joka kirjaa käyttäjän ulos palvelusta ja vie sisäänkirjautumis-sivulle.</li>
+          </ul>
+          </p>
+          <p>Virkailijapalvelun sisäänkirjautumissivulla ylätunniste sisältää poikkeuksellisesti:
+          <ul>
+            <li>Opintopolku-logo vasemmassa laidassa</li>
+            <li>Kielivalinta oikeassa laidassa: Suomeksi | På Svenska. Kielivalinta vaihtaa sisäänkirjatumissivun kielen sekä siihen liitettyjen Rekisteriseloste ja Tietosuojaseloste sivujen kielen.</li>
+          </ul>
+          </p>
+          <p>Oppijan palvelun ylätunniste sisältää:
+          <ul>
+            <li>Opintopolku-logo vasemmassa laidassa. Logo on linkki Oppijan palvelun etusivulle.</li>
+            <li>Kielivalinta oikeassa laidassa. Kielivalinnasta voi vaihtaa käyttöliittymän kielen milloin tahansa. Kaikki tarjolla olevat kielet ovat koko ajan näkyvillä. Mikäli tarjolla on vain yksi kieli, ei kielivalintaa esitetä. Kielet kirjoitetaan aina kyseisellä kielellä seuraavasti: Suomeksi, På Svenska, In English.</li>
+            <li>Muistilista oikeassa laidassa ennen Kielivalintaa. Muistilista vie Muistilista-sivulle. Se sisältää reaaliaikaisesti päivittyvän määräindikaattorin joka esittää kulloinkin muistilistalle lisättyjen koulutusten lukumäärän numeraalisesti. Koulutukset säilyvät muistilistalla selaimen sulkemiseen asti.</li>
+          </ul>
+          </p>
+			<p><a href="graafinen.html#ylatunniste">Katso ylätunnisteen visuaalinen määritys</a></p>
+
+        </div>
+        <h2 id="navigointipalkki">Navigointipalkki</h2>
+        <div class="well">
+          <p>Navigointipalkki sisältää päävalikon.</p>
+                    			<p><a href="navigointi.html#paavalikko">Katso päävalikon määritys (Navigointi - Päävalikko)</a></p>  
+                                                    			<p><a href="graafinen.html#navigaatio">Katso päävalikon visuaalinen määritys (Visuaalinen tyyli - Päävalikko)</a></p>        
+        </div>
+        <h2 id="alatunniste1">Alatunniste 1</h2>
+        <div class="well">
+          <p>Alatunniste 1 on käytössä ainoastaan Oppijan palvelussa. Sen tarkoituksena on koota palvelun hallintoon ja asiakaspalveluun liittyvät tiedot ja linkit yhteen.</p>
+          <p>Alatunniste 1 sisältää:
+          <ul>
+            <li>Opintopolku-logo vasemmassa laidassa. Logo on linkki Oppijan palvelun etusivulle.</li>
+            <li>Linkki: Mikä on Opintopolku? Linkki vie palvelun kuvaus-sivulle.</li>
+            <li>Linkki: Anna palautetta – kysy neuvoa. Linkki vie palautteenanto-sivulle.</li>
+            <li>Linkki: Rekisteriseloste. Linkki vie rekisteriseloste-sivulle.</li>
+            <li>Linkki: Oppilaitoshakemisto. Linkki vie oppilaitoshakemisto-sivulle.</li>
+            <li>Lisäksi sen yhteydessä esitetään merkintä tietojen oikeellisuudesta kaikilla koulutuksiin liittyvää tietoa sisältävillä sivuilla: “Koulutuksen järjestäjät ja korkeakoulut ylläpitävät tietoja koulutuksistaan Opintopolussa. Tietojen oikeellisuuden voit tarkistaa kyseisestä oppilaitoksesta tai korkeakoulusta.”</li>
+          </ul>
+          </p>
+          			<p><a href="graafinen.html#footer">Katso alatunnisteen visuaalinen määritys</a></p>
+        </div>
+        <h2 id="alatunniste2">Alatunniste 2</h2>
+        <div class="well">
+          <p>Alatunniste 2:n tarkoituksena on palvelun omistajuuden osoittaminen. Se sisältää Opetushallituksen logon, Opetus- ja kulttuuriministeriön logon sekä tekijänoikeuslausekkeen: “Copyright © 2013 Opetushallitus”. Logot toimivat linkkeinä ko. organisaatioiden www-sivustojen etusivuille. Virkailijapalvelussa esitetään logojen yhteydessä myös ko. organisaatioiden yhteystiedot.</p>
+                    			<p><a href="graafinen.html#footer">Katso alatunnisteen visuaalinen määritys</a></p>
+        </div>
+        <div class="row-fluid">
+          <h1 id="virkailija_sivupohja">Erityisiä sivupohjia</h1>
+          <hr>
+          <p>Seuraavien virkailijapalvelun sivupohjien noudattaminen on yhdenmukaisuuden vuoksi suositeltavaa. Muissa tapauksissa noudatetaan pääsääntöisesti yleistä sivupohjaa, näiden sivupohjien mallia, yhdenmukaisia tiedon esitystapoja sekä tässä tyylioppaassa esiteltyjä toiminnallisia komponentteja.</p>
+        </div>
+        <h2 id="hakutulosnakyma">Hakutulosnäkymä</h2>
+        <p>Hakutulosnäkymää käytetään virkailijapalvelussa kun käyttäjän tulee hakea tietoa ja/tai valita tietoa tarkasteltavaksi tai muokattavaksi. Näkymään sijoitetaan aina myös Luo uusi -painike toimintopainikkeille varattuun tilaan.</p>
+        <p>Hakuehtoja voidaan sijoittaa näkymään vapaasti toiminnallisia komponentteja hyödyntäen. Vähintään hakuehtona käytetään vapaata tekstikenttää (hakukenttä) ja Hae-painiketta, sekä Tyhjenna-painiketta. Hakuehdoilla tulee aina olla otsikot.
+        <p>Hakutulos esitetään taulukossa jonka sarakkeille annetaan sarakeotsikot. Tietojen järjestäminen sarakeotsikoittain on mahdollista. Jos hakutuloksille on tarpeen tarjota toiminnallisuutta, käytetään hakutuloksen edessä valikkokuvaketta, josta avautuu toimintovalikko.</p>
+        <p>Hakutuloslistassa voidaan käyttää valintaruutuja joilla voidaan mahdollistaa toimintoja usealle hakutulokselle yhtäaikaisesti (massatoiminto). Massatoimintopainikkeet sijoitetaan hakutuloksen yläpuolelle toimintopainikkeille varattuun tilaan. Massatoimintopainikkeet eivät ole käytössä ennenkuin käyttäjä on valinnut hakutuloksesta vähintään yhden hakutuloksen.</p>
+        <p>Hakutulokset järjestetään välilehdille tarpeen mukaan asiakokonaisuuksittain. Välilehtien otsakkeen perässä kerrotaan välilehden sisältämien hakutulosten lukumäärä (kokonaislukumäärä). Hakutulokset sivutetaan tarvittaessa. Sivutus-kontrolli tarjotaan sekä hakutulosten ylä- että alapuolella. Hakutulosten määrää per sivu sekä tuloslistan järjestystä voidaan vaihtaa.</p>
+        
+        <div class="well"> <img src="img/sivupohja_hakutulos.png"> </div>
+        <h2 id="lomakenakyma">Lomakenäkymä</h2>
+        <div class="well">
+          <p>Lomakenäkymää käytetään kun järjestelmään lisätään tietoa tai järjestelmään tallennettua tietoa muokataan.</p>
+          <p>Toimintopainikkeiden vasemmalle puolen sijoitetaan takaisin-painike, joka vie takaisin hakutulosnäkymään. Se toimii peruuta-painikkeena, kunnes tiedot on tallennettu ensimmäisen kerran. Toimintopainikkeiden oikealle puolen sijoitetaan jatka-painike, joka vie tarkastelunäkymään.</p>
+          <p>Tallenna-painike toimintopainikkeissa tallentaa kaiken lomakkeen sisällön. Monisivuisessa lomakkeessa tiedot tulee tallentaa ennen siirtymistä seuraavalle välilehdelle. Jos tallennusta ei ole tehty, käyttäjä ohjataan tallentamaan.<br>
+          <p>Otsikkona ja navigaatiopolussa näytetään lomakkeella luodun tiedon tallennettu nimi. Ennen ensimmäistä tallennusta otsikkona käytetään Uusi tieto, jossa tieto on valittu tietotyyppi jota ollaan lisäämässä.</p>
+          <p>Sisältöalueelle sijoitetaan lomakkeen kentät. Kenttäotsikot (nimiöt) tasataan oikealle, kentät vasemmalle. Jos kenttiä on enemmän kuin 10, on suositeltavaa jakaa kentät loogisiksi kokonaisuuksiksi välilehdille tai ohjatuksi sivustoksi. Ensimmäiselle välilehdelle sijoitetaan tyypillisesti Perustiedot, jotka ovat pakollisia. Kaikki pakolliset kentät tulee sijoittaa ensimmäiselle välilehdelle.</p>
+            <img src="img/sivupohja_lomake.png"></p>
+        </div>
+        <h2 id="tarkastelunakyma">Tarkastelunäkymä</h2>
+        <p>Toimintopainikkeiden vasemmalle puolen sijoitetaan takaisin-painike, joka vie takaisin hakutulokseen.</p>
+        <p>Otsikkona ja navigaatiopolussa käytetään tiedon tallennettua nimeä. Tyypillisesti se on sama nimi, joka näytetään hakijalle Oppijan palvelussa.</p>
+        <p>Mikäli näytettävästä tiedosta on useita kieliversioita, jaetaan kieliversiot välilehdille. Sisältöalueen tiedot jaetaan loogisiin kokonaisuuksiin ja otsikoidaan sisällön mukaisesti. Tyypillisesti sisältöalueella käytetään taitettua listaa/paneelia, joista ensimmäinen on oletuksena avoinna ja muut suljettuja.</p>
+        <div class="well"> <img src="img/sivupohja_tarkastelu.png"> </div>
+      </div>
+    </div>
+    <!-- END ROW --> 
+    
+  </div>
+  <!-- END SISÄLTÖOSA span10 --> 
+</div>
+<!-- END container--> 
+<script src="http://code.jquery.com/jquery-latest.js"></script> 
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

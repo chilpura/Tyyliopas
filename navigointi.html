@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opintopolku tyyliopas - Navigointi ja haku</title>
+<style type="text/css"></style>
+<link href="css/bootstrap-combined.css" rel="stylesheet" type="text/css">
+<link href="css/css-tyylikirjasto-virkailija.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.well {
+	background: white;
+}
+
+</style>
+</head>
+<body>
+<div class="container-fluid"> 
+  <!-- container -->
+  <div class="navbar"> <!-- PÄÄNAVI -->
+    <div class="navbar-inner"> <a class="brand" href="#">Opintopolku.fi tyyliopas</a>
+      <ul class="nav">
+        <li><a href="index.html">Johdanto</a></li>
+        <li><a href="tietojen-esittaminen.html">Tietojen esittäminen</a></li>
+        <li><a href="tietojen-lisaaminen.html">Tietojen muokkaaminen</a></li>
+        <li><a href="toiminnalliset-komponentit.html">Toiminnalliset komponentit</a></li>
+        <li><a href="ilmoitukset-indikaattorit.html">Ilmoitukset ja indikaattorit</a></li>
+        <li class="active"><a href="navigointi.html">Navigointi</a></li>
+		 <li><a href="sivupohjat.html">Sivupohjat</a></li>
+        <li><a href="graafinen.html">Visuaalinen tyyli</a></li>
+    </div>
+  </div>
+  <!-- END PÄÄNAVI -->
+  
+  <div class="row-fluid"> 
+    <!-- CONTAINER -->
+    <div class="span2"> <!-- SIVUNAVI -->
+      <ul class="nav nav-tabs nav-stacked">
+        <li><a href="#paavalikko">Päävalikko</a></li>
+        <li><a href="#alavalikko">Alavalikko</a></li>
+        <li><a href="#navigaatiopolku">Navigaatiopolku</a></li>
+        <li><a href="#back">Back-painikkeen käyttö</a></li>
+		<li><a href="#haku">Haku</a></li>
+		<li><a href="#organisaatiohaku">Organisaatiohaku</a></li>
+      </ul>
+    </div>
+    <!-- END SIVUNAVI -->
+    
+    <div class="span10">
+      <div class="row-fluid">
+        <h1 id="navigointi">Navigointi ja Haku</h1>
+        <hr>
+        <p>Palvelussa navigointiin käytetään seuraavia elementtejä.</p>
+        <h2 id="paavalikko">Päävalikko</h2>
+        <div class="well">
+          <p>Päävalikko sijoitetaan navigointipalkkiin ylätunnisteen alle. Oletusarvoisesti siinä on esillä sivurakenteen ensimmäisen tason valinnat, jotka toimivat linkkeinä käyttöliittymän pääsivuille. Valitsemalla näitä linkkejä käyttäjä siirtyy sivulta toiselle.</p>
+          <p>Vietäessä hiiren kursori valinta-alueen ylle korostetaan valinta-alue ja avataan pudotusvalikko, joka sisältää ensimmäiselle tasolle alisteisena sivurakenteen toisen tason valinnat. Pudotusvalikko pidetään auki kunnes kursori siirretään pois valinta-alueen tai pudotusvalikon päältä. Siirrettäessä kursoria pudotusvalikon yllä korostetaan valinta-alue jonka yllä kursori kulloinkin on. Klikattaessa päävalikon valintaa tai pudotusvalikon valintaa siirrytään valintaan linkitetylle sivulle, ja valittu päävalikon valinta esitetään korostettuna.</p>
+          <p>Päävalikossa korostetaan aina se valinta, johon kuuluvalla sivulla (sivurakenne) kulloinkin ollaan (poikkeuksena etusivu). Päävalikon alavalikossa (pudostusvalikko) korostetaan aina se valinta johon kuuluvalla sivulla (sivurakenne) tai johon linkitetyllä sivulla ollaan.</p>
+          <p><a href="graafinen.html#navigaatio">Katso päävalikon asemointi ja visuaaliset määritykset</a></p>
+
+        </div>
+        <h2 id="alavalikko">Alavalikko</h2>
+        <div class="well">
+          <p>Alavalikkoa käytetään kun halutaan mahdollistaa navigointi päävalikosta valitun aiheen sisällä myös päävalikkoa käyttämättä.</p>
+          <p>Alavalikossa esitetään sivurakenteen toisen ja sitä syvempien tasojen navigointi alisteisena päävalikossa tehdylle ensimmäisen tason valinnalle. Alavalikossa käytetään hierarkista listakomponenttia. Alavalikko esitetään puurakenteena jossa ylimmäisenä on päävalikosta valittu tietorakenteen ensimmäisen tason valinta, sen alla sisennetysti sille alisteiset tietorakenteen toisen tason sisällöt sekä niille alisteisesti ja sisennetysti mahdolliset syvemmät tietorakenteen tasot.</p>
+          <p>Oletusarvoisesti puurakenteessa on auki valitulle tasolle alisteisena sivurakenteen toisen tason valinnat. Käyttäjä voi avata ja sulkea puurakenteen tasoja valitsemalla alatasoja sisältävän tason tai sen yhteydessä esitettävän nuoli-kuvakkeen. Nuoli-kuvakkeet käännetään alaspäin kun taso on auki ja oikealle kun taso on kiinni. Mikäli taso on auki, se sulkeutuu valittaessa. Mikäli se on kiinni, se avautuu valittaessa. Tasoon linkitetty sivu esitetään aina taso valittaessa. Tasot jotka sisältävät alatasoja esitetään lihavoidulla fontilla.</p>
+          <p>Puurakenteesta korostetaan se käyttöliittymän sivu jolla sillä hetkellä ollaan, sekä se valinta-alue jonka yllä kursori kulloinkin on. Klikkaamalla valinta-aluetta siirrytään siihen linkitetylle sivulle.</p>
+          
+           <div class="well"> <i><b>Esimerkki: Alavalikko Oppijan palvelussa</b></i><br>
+          <img src="img/alavalikko.png"> <br>         
+          </div>           
+
+        </div>
+        <h2 id="navigaatiopolku">Navigaatiopolku</h2>
+        <div class="well">
+          <p>Navigaatiopolku sijoitetaan sivulle sivupohjien mukaan. Navigaatiopolku esittää aina navigaatiorakenteen (sivurakenne) esillä olevasta sivusta ylöspäin. Se sisältää:
+          <ul>
+            <li>Vasemmalla ensimmäisenä Koti-ikonin, joka toimii linkkinä palvelun etusivulle</li>
+            <li>Oikealla viimeisenä esillä olevan sivun otsikon (tämä ei ole linkki)</li>
+            <li>Koti-ikonin ja esillä olevan sivun otsikon välissä kaikkien niiden tasojen otsikot joiden kautta esillä olevalle sivulle tietorakenteessa päädytään erotettuna > merkillä. Otsikot ovat linkkejä kunkin tason etusivulle eli otsikkoon linkitetylle sivulle.</li>
+          </ul>
+          </p>
+          <p>Oppijan palvelun hakutuloksessa ensimmäinen taso koti-ikonin jälkeen on aina “Hakutulokset” ja sen jälkeen tietorakenteena käytetään valitun koulutuksen koulutusrakennetta.</p>
+			<p><a href="graafinen.html#murupolku">Katso navigaatiopolun asemointi ja visuaalinen määritys</a></p>
+
+        </div>
+        <h2 id="back">Back-painikkeen käyttö</h2>
+        <div class="well">
+          <p>Selaimen back-painikkeen käyttöä ei suositella käyttöliittymässä. Jotta tietojen syötössä vältetään virheitä estetään lomakkeille ja dialogeihin pääsy selaimen back-painikkeella. Selaimen back-painikkeella voidaan selata tarkastelunäkymien ja hakutulosnäkymien historiaa.</p>
+        </div>
+        <h2 id="haku">Haku</h2>
+        <div class="well">
+        <p>Käyttöliittymässä voi hakea järjestelmään tallennettua tietoa.</p>
+        <p><a href="sivupohjat.html#hakutulosnakyma">Katso Hakunäkymän sivupohja</a></p>
+        <p>Yksinkertaisimmillaan hakuun käytetään hakukenttää ja Hae-painiketta. Hae-painike sijoitetaan hakukentän välittömään yhteyteen sen oikealle puolen. Hakukenttää ei merkitä kuvakkeella, koska Hae-painike on kuvakkeellinen. Hakukentällä kuuluu olla otsikko tai nimiö joka ilmaisee haun sisällön (mitä haku koskee).</p>
+        <p>Hae-painike on oletusarvoinen toiminto sivulla. Hae-painike on aina väriltään keltainen kuvakkeellinen painike. Hakukenttään käyttäjä voi syöttää tekstin jolla haku suoritetaan. Hae-painikkeen valinta käynnistää haun. Kun hakukenttä on aktiivinen voidaan haku käynnistää myös ENTER-painikkeella näppäimistöltä.</p>
+        <p>Haku tukee Voikko kielityökalua (<a href="http://voikko.puimula.org/">http://voikko.puimula.org/</a>), jonka avulla hakusanat käsitellään pyrkien palauttamaan ne perusmuotoonsa. Oletusarvoisesti hakukenttään syötetyt useat hakusanat käsitellään hakufraasina. Boolean operaattoreita ei tueta.</p>
+        <p>Hae-painikkeen vieressä vasemmalla on aina Tyhjennä-painike, joka tyhjentää hakukentän ja mahdollisesti samalla sivulla olevien muiden hakuehtojen sisällön oletusarvoiseen tilaan.</p>
+        <p>Hakukenttään voidaan sijoittaa ohjetekstiä tai oletusarvo. Nämä poistuvat näkyvistä kun käyttäjä aktivoi hakukentän. Tyhjennä-painikkeen aktivointi tyhjentää hakukentän aina oletusarvoiseen tilaan sisältäen mahdollisen ohjetekstin tai oletusarvon.</p>
+        <p>Hakukentän yhteyteen tai sen sijasta voidaan käyttää vapaasti toiminnallisia komponentteja joilla voidaan valita käytettäviä hakuehtoja.</p>
+        <p>Hakutulokset suositellaan tulostettavaksi samalle sivulle jolta haku on käynnistetty. Poikkeuksia tähän ohjeeseen voidaan tehdä perustellusti. Hakutulokset voidaan esittää taulukossa tai listana, hyödyntäen toiminnallisia komponentteja. Hakutulosten määrästä ja laadusta riippuen ne voidaan järjestää välilehtiin ja/tai usealle sivulle sivutusta käyttäen.</p>
+        <p>Hakutuloksia voidaan rajata edelleen käyttäen toiminnallisia komponentteja hakuehtojen valitsemiseen.</p>
+        <p>Hakutuloksista voidaan tehdä valintoja tietojen tarkasteluun, muokkaamiseen tai poistamiseen.</p>
+</div>
+        <h2 id="organisaatiohaku">Organisaatiohaku</h2>
+        <div class="well">
+          <p>Organisaatiohakua käytetään organisaatiorajauksen tekemiseen Koulutusten ja hakukohteiden ylläpito sekä Hakemusten käsittelyn palveluissa. Organisaatiohaku on oma elementti, joka sijoitetaan näkymän vasempaan laitaan.</p>
+          <p>Organisaatiohaun sivussa on liukusäädin, josta organisaatiohaun saa siirrettyä sivuun vasemmalle ja organisaatiohaulta vapautuu tilaa muulle sisällölle. Organisaatiohaun avulla valitaan organisaatio, johon muut näkymän haut rajataan.</p>
+          <p>Organisaatiohaku koostuu vapaasanahaku-kentästä, kahdesta valintalistasta, Tyhjennä- ja Hae-painikkeista sekä hierarkkista organisaatiorakennetta kuvaavasta puurakenteesta. Oletuksena puurakennetta on piilossa kunnes käyttäjä tekee haun. Haku palauttaa hakuehtoja vastaavien puiden juuret listana. Käyttäjän valitetessa organisaation, organisaatiorajaus aktivoituu ja muun näkymän haku suoritetaan sen hetkisillä hakuehdoilla. Käyttäjä voi vaihtaa organisaatiota ja haku suoritetaan ilman erillistä Hae-painikkeen painamista.</p>
+
+           <div class="well"> <i><b>Esimerkki: Organisaatiohaku auki</b></i><br>
+          <img src="img/organisaatiohaku_auki.png" width="862" height="515"> <br>         
+          </div> 
+          
+           <div class="well"> <i><b>Esimerkki: Organisaatiohaku kiinni</b></i><br>
+          <img src="img/organisaatiohaku_kiinni.png" width="666" height="533"> <br>         
+          </div>           
+
+    </div>
+    <!-- END ROW --> 
+    
+  </div>
+  <!-- END SISÄLTÖOSA span10 --> 
+</div>
+<!-- END container--> 
+<script src="http://code.jquery.com/jquery-latest.js"></script> 
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
