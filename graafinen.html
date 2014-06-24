@@ -499,7 +499,7 @@
                 <h3>Alert dialogin sisällä</h3>
             </div>
             <div class="modal-body">
-            <div class="alert alert-block"><img style="margin-right:10px;" src="img/alert-icon28x29.png">Alert block dialogin sisällä</div>    
+                <div class="alert alert-block"><img style="margin-right:10px;" src="img/alert-icon28x29.png">Alert block dialogin sisällä</div>    
                 Qui ipsorum lingua Celtae, nostra Galli appellantur. Quisque ut dolor gravida, placerat libero vel, euismod. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary">Painike</button>
@@ -513,7 +513,9 @@
 <div class="row-fluid"> <!-- ROW -->
     <h2 id="dialogit">Dialogit <small></small></h2>
     <div class="well">
-        <p>Bootstrapin perusdialogi. Tuotetaan käyttämällä luokkaa <code>.modal</code>. </p>
+        <p>Bootstrapin perusdialogi. Tuotetaan käyttämällä luokkaa <code>.modal</code>.</p>
+        <p>Bootstrap 3 tarjoaa mahdollisuuden käyttää 3 erikokoista dialogia: iso (leveys 900px), keskikokoinen (leveys 600px) ja pieni leveys (300px). Pienin näistä dialogeista ei ole sovelias käytettäväksi, mutta isoa ja keskikokoista voi käyttää. Dialogin koko valitaan tilan tarpeen mukaan. Keskikokoinen dialogi näytetään oletusarvoisesti <code>.modal</code> luokalla, iso dialogin näyttämiseksi käytetään lisäksi <code>.modal-lg</code> luokkaa.</p>
+        <p>Dialogin korkeutta voidaan kontrolloida <code>max-height</code> tyylimääritteellä, mutta oletusarvoisesti sitä ei tarvitse tehdä, koska Bootstrap 3:lla tehtyjä dialogeja voidaan vierittää jos ne ovat korkeampia kuin selaimen ikkuna. Jos dialogin korkeudelle annetaan kiinteä koko, se ei saisi olla korkeampi kuin 800px.</p>
         <div class="modal" style="position: relative; top: auto; left: auto; right: auto; margin: 0 auto 20px; z-index: 1; max-width: 100%;">
             <div class="modal-header">
                 <h3>Otsikko</h3>
@@ -523,7 +525,26 @@
                 <button class="btn btn-secondary">Painike</button>
                 <button class="btn btn-primary">Painike</button>
             </div>
-        </div>        
+        </div>
+        <div class="modal modal-lg" style="position: relative; top: auto; left: auto; right: auto; margin: 0 auto 20px; z-index: 1; max-width: 100%;">
+            <div class="modal-header">
+                <h3>Otsikko</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <p>Qui ipsorum lingua Celtae, nostra Galli appellantur. Quisque ut dolor gravida, placerat libero vel, euismod. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.</p>
+                    </div>
+                    <div class="span6">
+                        <p>Qui ipsorum lingua Celtae, nostra Galli appellantur. Quisque ut dolor gravida, placerat libero vel, euismod. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary">Painike</button>
+                <button class="btn btn-primary">Painike</button>
+            </div>
+        </div>
     </div>
 </div>
 <!-- END ROW -->
@@ -812,9 +833,9 @@
 </div>
 
 <div class="row-fluid"> 
-<h2 id="xxx">Tooltip <small></small></h2>
-<div class="well">
-    <p>Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit <a href="#" data-tooltip="Fermentum Fringilla Cras" class="glossaryLink">AMK</a>. Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. <a href="#" data-tooltip="Quam Ridiculus Ultricies Sit" class="glossaryLink">Duis</a> mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+    <h2 id="xxx">Tooltip <small></small></h2>
+    <div class="well">
+        <p>Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit <a href="#" data-tooltip="Fermentum Fringilla Cras" class="glossaryLink">AMK</a>. Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. <a href="#" data-tooltip="Quam Ridiculus Ultricies Sit" class="glossaryLink">Duis</a> mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
     </div>
 </div>
 
