@@ -2,3 +2,7 @@
 .icon-link-ext:before { content: '\e800'; } /* '' */
 .icon-link-ext-alt:before { content: '\e801'; } /* '' */
 .icon-angle-double-right:before { content: '\e802'; } /* '' */
+.icon-check:before { content: '\e803'; } /* '' */
+.icon-angle-right:before { content: '\e804'; } /* '' */
+.icon-home:before { content: '\e805'; } /* '' */
+.icon-search:before { content: '\e806'; } /* '' */

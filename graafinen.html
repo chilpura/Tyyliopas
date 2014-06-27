@@ -60,6 +60,8 @@
                         <li><a href="#sivutus">Sivutus</a></li>
                         <li><a href="#labelit">Laput</a></li>
                         <li><a href="#containerit">Containerit</a></li>
+                        <li><a href="#tooltip">Tooltip</a></li>
+                        <li><a href="#webfontti">Webfontti</a></li>
                     </ul>
                 </div>
                 <div class="span10">
@@ -141,13 +143,28 @@
                     <div class="row-fluid"> <!-- ROW -->
                         <h2 id="murupolku">Murupolku <small></small></h2>
                         <div class="well">
-                            <p>Angularin murupolkua ei ole muokattu virkailijan tyyliin, mutta oheisen kuvan mukaan sen voi tehdä tarvittaessa.</p>
-                            <img src="img/murupolku.png">
-                            <h5>Murupolun kuvaresurssit</h5>
-                            <p><img src="img/breadcrumb-home-icon.png"></p>
-                            <p>Koti-ikoni</p>
-                            <p><img src="img/breadcrumb-arrow-icon.png"></p>
-                            <p>Väkänen</p>
+
+                            <p>Alla esimerkki murupolusta. Murupolun ikonit muodostetaan webfontilla. Katso lisää kappaleesta <a href="#webfontti">Webfontti</a></p>
+                            <!--                            <img src="img/murupolku.png">
+<h5>Murupolun kuvaresurssit</h5>
+<p><img src="img/breadcrumb-home-icon.png"></p>
+<p>Koti-ikoni</p>
+<p><img src="img/breadcrumb-arrow-icon.png"></p>
+<p>Väkänen</p> -->
+                            <ul class="breadcrumb">
+                                <li><i class="icon-home"></i> <a href="#"> Navigaatiotaso-1</a> <span class="divider"><i class="icon-angle-right"></i></span></li>
+                                <li><a href="#">Navigaatiotaso-2</a> <span class="divider"><i class="icon-angle-right"></i></span></li>
+                                <li class="active">Aktiivinen sivu</li>
+                            </ul>
+                            <h5>Murupolun tiedot</h5>
+                            <ul class="unstyled">
+                                <li>Linkin väri: sama kuin <code>&lt;a&gt;</code></li>
+                                <li>Aktiivisen sivun tekstin väri: <code>#333333</code> </li>
+                                <li>Ikonien väri: <code>#f8b600</code></li>
+                                <li>Ikonin <i class="icon-home"></i> koko: <code>16px</code> (tai vastaavan koon tuottava em- tai rem-arvo)</li>
+                                <li>Ikonin <i class="icon-angle-right"></i>koko: <code>12px</code> (tai vastaavan koon tuottava em- tai rem-arvo)</li>
+                                <li>Tekstin koko: <code>12px</code> (tai vastaavan koon tuottava em- tai rem-arvo)</li>
+                            </ul>
                         </div>
                     </div>
                     <!-- END ROW -->
@@ -443,30 +460,24 @@
                             <p>Hover: <a href="#" style="color:#ffffff; text-decoration:underline;">Lorem ipsum dolor sit amet</a></p>
                             <p>Active: <a href="#" style="color:#ffffff; text-decoration:underline;">Lorem ipsum dolor sit amet</a></p>
                             <p>Visited: <a href="#" style="color:#ffffff; text-decoration:underline;">Lorem ipsum dolor sit amet</a></p>
+                            <p>Visited: <a href="#" style="color:#ffffff; text-decoration:underline;">Lorem ipsum dolor sit amt</a></p>
                         </div>
                         <div class="well" style="border-style:solid; border-width:1px; border-color:rgba(20, 158, 203, 0.45); border-radius:3px; padding:10px;">
-                            <p>Linkkilistat ja ulkoiset linkit voi varustaa ikonilla, ikoni muodostetaan webfontilla joka kutsutaan resurssikansiosta <code>fontello</code>. Webfontin käyttämiseksi dokumenttiin täytyy lisätä linkki tyylitiedostoon <code>fontello.css</code>. Fontti on optimoitu siten että se sisältää ainoastaan seuraavat merkit:</p>
-                            <p>
-                                <div title="Code: 0xe801" class="the-icons"><i class="icon-link-ext-alt"></i> <span class="i-name">icon-link-ext-alt</span></div>
-                            <div title="Code: 0xe802" class="the-icons"><i class="icon-angle-double-right"></i> <span class="i-name">icon-angle-double-right</span></div>
-                        </p>
-                        <p>Ikoni lisätään seuraavanlaisella koodilla: <code>&lt;i class="icon-link-ext-alt"&gt;</i></code></p>
-                <p>Webfontin käytöstä on se hyöty verrattuna bitmap-ikoniin että se skaalautuu käytetyn tekstin koon mukaan. Eri kokoisille teksteille ei siis tarvitse luoda eri ikoneita ja ikoni skaalautuu myös jos käyttäjä muuttaa tekstin kokoa selaimen kautta.</p>
-                <p> Ikonin ja sitä välittömästi seuraavan tekstin väliin on luotava tyhjää tilaa esimerkiksi seuraavalla tavalla: <code> i { padding-right:0.20em; } </code> </p>
-                <h5>Ikonilla varustetut linkkilistat</h5>
-                <div>
-                    <h5>Lue lisää</h5>
-                    <a href="#"><i class="icon-angle-double-right"></i>Helsingin yliopiston muu koulutus</a></br>
-                <a href="#"><i class="icon-angle-double-right"></i>Historia, perinteet ja kulttuuri -teeman mukainen koulutus muualla</a></br>
-            <a href="#"><i class="icon-angle-double-right"></i>Kulttuurintutkimus - ylempi korkeakoulututkinto muualla</a></br>
-        <a href="#"><i class="icon-angle-double-right"></i>Historia, perinteet ja kulttuuri -teeman mukaista koulutusta järjestävät korkeakoulut</a></br>
-</div>
-<div>
-    <h5>Ulkoisia linkkejä</h5>
-    <a href="#"><i class="icon-link-ext-alt"></i>Helsingin yliopiston muu koulutus</a></br>
-<a href="#"><i class="icon-link-ext-alt"></i>Historia, perinteet ja kulttuuri -teeman mukainen koulutus muualla</a></br>
-<a href="#"><i class="icon-link-ext-alt"></i>Kulttuurintutkimus - ylempi korkeakoulututkinto muualla</a></br>
-<a href="#"><i class="icon-link-ext-alt"></i>Historia, perinteet ja kulttuuri -teeman mukaista koulutusta järjestävät korkeakoulut</a></br>
+                            <p>Linkkilistat ja ulkoiset linkit voi varustaa ikonilla, ikoni muodostetaan webfontilla. Katso lisää kappaleesta <a href="#webfontti">Webfontti</a></p> 
+                            <h5>Ikonilla varustetut linkkilistat</h5>
+                            <div>
+                                <h5>Lue lisää</h5>
+                                <a href="#"><i class="icon-angle-double-right"></i>Helsingin yliopiston muu koulutus</a></br>
+                            <a href="#"><i class="icon-angle-double-right"></i>Historia, perinteet ja kulttuuri -teeman mukainen koulutus muualla</a></br>
+                        <a href="#"><i class="icon-angle-double-right"></i>Kulttuurintutkimus - ylempi korkeakoulututkinto muualla</a></br>
+                    <a href="#"><i class="icon-angle-double-right"></i>Historia, perinteet ja kulttuuri -teeman mukaista koulutusta järjestävät korkeakoulut</a></br>
+            </div>
+            <div>
+                <h5>Ulkoisia linkkejä</h5>
+                <a href="#"><i class="icon-link-ext-alt"></i>Helsingin yliopiston muu koulutus</a></br>
+            <a href="#"><i class="icon-link-ext-alt"></i>Historia, perinteet ja kulttuuri -teeman mukainen koulutus muualla</a></br>
+        <a href="#"><i class="icon-link-ext-alt"></i>Kulttuurintutkimus - ylempi korkeakoulututkinto muualla</a></br>
+    <a href="#"><i class="icon-link-ext-alt"></i>Historia, perinteet ja kulttuuri -teeman mukaista koulutusta järjestävät korkeakoulut</a></br>
 </div>
 </div>
 <div class="well" style="border-style:solid; border-width:1px; border-color:rgba(20, 158, 203, 0.45); border-radius:3px; padding:10px;">
@@ -833,11 +844,46 @@
 </div>
 
 <div class="row-fluid"> 
-    <h2 id="xxx">Tooltip <small></small></h2>
+    <h2 id="tooltip">Tooltip <small></small></h2>
     <div class="well">
         <p>Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit <a href="#" data-tooltip="Fermentum Fringilla Cras" class="glossaryLink">AMK</a>. Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. <a href="#" data-tooltip="Quam Ridiculus Ultricies Sit" class="glossaryLink">Duis</a> mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
     </div>
 </div>
+
+
+<div class="row-fluid"> 
+    <h2 id="webfontti">Webfontti <small></small></h2>
+    <div class="well">
+        <p>Palvelussa voidaan tarpeen vaatiessa käyttää webfontilla tuotettuja ikoneita. Webfontti on tuotettu <a href="http://fontello.com/">Fontello</a> palvelun avulla ja se on optimoitu siten että fontti sisältää tällä hetkellä seuraavat kuvakkeet.</p>
+        <p>      
+            <div class=""><i class="icon-link-ext"></i> <span class="i-name">icon-link-ext</span></div>
+
+        <div class=""><i class="icon-link-ext-alt"></i> <span class="i-name">icon-link-ext-alt</span></div>
+
+        <div class=""><i class="icon-angle-double-right"></i> <span class="i-name">icon-angle-double-right</span></div>
+
+        <div class=""><i class="icon-check"></i> <span class="i-name">icon-check</span></div>
+
+        <div class=""><i class="icon-angle-right"></i> <span class="i-name">icon-angle-right</span></div>
+
+        <div class=""><i class="icon-home"></i> <span class="i-name">icon-home</span></div>
+
+        <div class=""><i class="icon-search"></i> <span class="i-name">icon-search</span></div>
+    </p>    
+    <p>Webfontin käyttämiseksi html-dokumenttiin täytyy lisätä linkki tyylitiedostoon <code>fontello.css</code>. Ikoni lisätään sivulle koodilla <code>&lt;i class="icon-search"&gt;&lt;/i&gt;</code>, esimerkiksi edellinen koodi tuottaa seuraavanlaisen ikonin: <i class="icon-search"></i></p>
+    <p>Ikoneita voi lisätä valikoimaan Fontellon palvelun avulla. Silloin resurssikansio <code>fontello</code>n sisältö korvataan fontellosta ladatuilla uusilla tiedostoilla. Uusia ikoneita valitessa kannattaa ensisijaisesti käyttää fonttiperhettä Font Awesome, jolloin ikoneiden visuaalinen tyyli pysyy yhtenäisenä. Fontellon oletuksena antamia luokkanimiä ei ole muutettu, eikä niitä ole syytä muuttaa uusia fontteja lisätessä. Uudelleen nimeäminen voi tulla kysymykseen siinä tapauksessa saman nimisiä luokkanimiä on jo käytössä.</p>
+    <p>Webfontin käytöstä on se hyöty verrattuna bitmap-ikoniin että se skaalautuu käytetyn tekstin koon mukaan. Eri kokoisille teksteille ei siis tarvitse luoda eri ikoneita ja ikoni skaalautuu myös jos käyttäjä muuttaa tekstin kokoa selaimen kautta.</p>
+    <p> Ikonin ja sitä välittömästi seuraavan tekstin väliin on luotava tyhjää tilaa esimerkiksi seuraavalla tavalla: <code> i { padding-right:0.20em; } </code> </p>
+</div>                                
+
+
+
+
+
+</div>
+</div> 					    
+
+
 
 <!--
 <div class="row-fluid"> 

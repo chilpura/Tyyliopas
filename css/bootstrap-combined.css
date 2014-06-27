@@ -382,7 +382,8 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .icon-white,.nav-pills>.active>a>[class^="icon-"],.nav-pills>.active>a>[class*=" icon-"],.nav-list>.active>a>[class^="icon-"],.nav-list>.active>a>[class*=" icon-"],.navbar-inverse .nav>.active>a>[class^="icon-"],.navbar-inverse .nav>.active>a>[class*=" icon-"],.dropdown-menu>li>a:hover>[class^="icon-"],.dropdown-menu>li>a:focus>[class^="icon-"],.dropdown-menu>li>a:hover>[class*=" icon-"],.dropdown-menu>li>a:focus>[class*=" icon-"],.dropdown-menu>.active>a>[class^="icon-"],.dropdown-menu>.active>a>[class*=" icon-"],.dropdown-submenu:hover>a>[class^="icon-"],.dropdown-submenu:focus>a>[class^="icon-"],.dropdown-submenu:hover>a>[class*=" icon-"],.dropdown-submenu:focus>a>[class*=" icon-"]{background-image:url("../img/glyphicons-halflings-white.png");}
 .icon-glass{background-position:0 0;}
 .icon-music{background-position:-24px 0;}
-.icon-search{background-position:-48px 0;}
+/* .icon-search{background-position:-48px 0;} */
+/* commented away because icon is delivered with fontello */
 .icon-envelope{background-position:-72px 0;}
 .icon-heart{background-position:-96px 0;}
 .icon-star{background-position:-120px 0;}
@@ -400,7 +401,8 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .icon-signal{background-position:-408px 0;}
 .icon-cog{background-position:-432px 0;}
 .icon-trash{background-position:-456px 0;}
-.icon-home{background-position:0 -24px;}
+/*.icon-home{background-position:0 -24px;}*/ 
+/* commented away because icon is delivered with fontello */
 .icon-file{background-position:-24px -24px;}
 .icon-time{background-position:-48px -24px;}
 .icon-road{background-position:-72px -24px;}
@@ -446,7 +448,8 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .icon-tint{background-position:-72px -72px;}
 .icon-edit{background-position:-96px -72px;}
 .icon-share{background-position:-120px -72px;}
-.icon-check{background-position:-144px -72px;}
+/* .icon-check{background-position:-144px -72px;} */
+/* commented away because icon is delivered with fontello */
 .icon-move{background-position:-168px -72px;}
 .icon-step-backward{background-position:-192px -72px;}
 .icon-fast-backward{background-position:-216px -72px;}
