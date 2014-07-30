@@ -93,7 +93,7 @@
         <h2 id="painikkeet">Painikkeet</h2>
         <div class="well">
           <p>Painikkeita käytetään kun käyttäjälle mahdollistetaan suoritettavaksi toimintoja jotka vaikuttavat järjestelmän tilaan.</p>
-          <p>Painikkeet sijoitetaan sivupohjien mukaisesti muusta sisällöstä erilleen, yleensä joko sivun tai dialogi-ikkunan ylä- tai alalaitaan. Alueelle jolle painikkeet sijoitetaan ei sijoiteta muuta tietoa tai sisältöä. Painikkeiden järjestyksen tulee olla sama kaikilla sivuilla, sivupohjien määritysten mukaan. Yleisperiaatteena on, että oikealta vasemmalle luettuna (sekä ylhäältä alas) suorittava toiminto edeltää ei-suorittavaa; Kyllä edeltää Ei:tä, Tallenna edeltää Peruutusta.</p>
+          <p>Painikkeet sijoitetaan sivupohjien mukaisesti muusta sisällöstä erilleen, yleensä joko sivun tai dialogi-ikkunan ylä- tai alalaitaan. Hakunäkymien painikkeet sijoitetaan sivupohjan mukaan hakuehtojen sivulle tai alapuolelle. Alueelle jolle painikkeet sijoitetaan ei tyypillisesti sijoiteta muuta tietoa tai sisältöä. Painikkeiden järjestyksen tulee olla sama kaikilla sivuilla, sivupohjien määritysten mukaan. Yleisperiaatteena on, että oikealta vasemmalle luettuna (sekä ylhäältä alas) suorittava toiminto edeltää ei-suorittavaa; Kyllä edeltää Ei:tä, Tallenna edeltää Peruutusta.</p>
           <p>Sivun ensisijainen toiminto näytetään keltaisena painikkeena. Sivulla suositellaan olevan vain yksi ensisijainen toiminto. Mikäli sivulla on useita samanarvoisia ensisijaisia toimintoja voi keltaisia painikkeita olla tarvittaessa useita, ei kuitenkaan koskaan kolmea enempää. Mikäli sivulla tai dialogissa on vain yksi painike, on se aina ensisijainen.</p>
           
           <div class="well"> <i><b>Esimerkki: Painikkeiden asemointi sivulla</b></i><br>
@@ -108,8 +108,9 @@
           </ul>
           </p>
           <h3>Peruspainike</h3>
-          <p>Peruspainike sisältää tekstin joka kuvaa painikkeen toiminnon verbinä joka kirjoitetaan isolla alkukirjaimella. Poikkeuksena ovat monivaiheiset toiminnot, kuten ohjattu sivutus (wizard), joissa käytetään substantiivejä painikkeiden nimeämisessä. Teksti tasataan painikkeen sisällä keskelle.</p>
-          
+          <p>Peruspainike sisältää tekstin joka kuvaa painikkeen toiminnon verbinä joka kirjoitetaan isolla alkukirjaimella. Poikkeuksena ovat Takaisin-painike ja monivaiheiset toiminnot, kuten ohjattu sivutus (wizard), joissa käytetään substantiivejä painikkeiden nimeämisessä. Teksti tasataan painikkeen sisällä keskelle.</p>
+          <p>Takaisin-painikkeen käytössä kannattaa huomioida, että sanaa käytettäessä se kuvaa todellista työnkulkua takaisin. Jos näkymään päätymiseen on useita väyliä, on Takaisin-painikkeen sijasta on suositeltavaa etsiä kuvaavampi ilmaisu, tai käyttää kuvaketta.</p>
+      
           <div class="well"> <i><b>Esimerkki: Peruspainike, oikealla ensisijainen toiminto</b></i><br>
           <img src="img/peruspainike.png" width="159" height="43"> <br>         
           </div>          
@@ -117,7 +118,7 @@
           <p>Peruspainikkeesta on käytettävissä kaksi kokoa: Normaali ja Suuri. Normaali on ensisijainen ja oletusarvoinen painikkeen koko. Suurta painiketta voi käyttää näkymissä, joissa on vain vähän toimintoja ja normaali painike näyttäisi suhteettoman pieneltä muuten tyhjällä sivulla. Esimerkiksi jos näkymässä on vain yksi hakukenttä ja painike (hakukentän on kuitenkin silloin oltava suhteessa painikkeen kokoon).</p>
           <p><a href="graafinen.html#nappulat">Katso painikkeiden visuaalinen määritys</a></p>
           <h3>Kuvakkeellinen painike</h3>
-          <p>Painike kuvakkeella sisältää tekstin samalla tavalla kuin peruspainike ja sen lisäksi kuvakkeen painikkeen sisällä tekstin oikealla puolen. Teksti ja kuvake tasataan ryhmänä painikkeen sisällä keskelle.</p>
+          <p>Painike kuvakkeella sisältää tekstin samalla tavalla kuin peruspainike ja sen lisäksi kuvakkeen painikkeen sisällä tekstin oikealla puolen. Kuvakkeellisen painikkeen kuvan voi sijoittaa myös vasemmalle tilanteessa, jossa painikkeen kuva vasemmalla tukee paremmin työnkulkua. Esimerkki tällaisesta on Takaisin-painike. Teksti ja kuvake tasataan ryhmänä painikkeen sisällä keskelle.</p>
           <p>Kuvakkeellista painiketta käytetään seuraaville toiminnoille:
           <ul>
             <li>Lisäys: Lisäyksen kohde voi vaihdella ja ilmaistaan tekstillä. Tarkoituksena on, että kun tehdään lisäyksiä järjestelmään käytetään kuvakkeellista lisää –painiketta.</li>
