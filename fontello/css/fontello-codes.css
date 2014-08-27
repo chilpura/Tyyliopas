@@ -6,3 +6,17 @@
 .icon-angle-right:before { content: '\e804'; } /* '' */
 .icon-home:before { content: '\e805'; } /* '' */
 .icon-search:before { content: '\e806'; } /* '' */
+.icon-lock:before { content: '\e807'; } /* '' */
+.icon-login:before { content: '\e808'; } /* '' */
+.icon-user:before { content: '\e809'; } /* '' */
+.icon-suitcase:before { content: '\e80a'; } /* '' */
+.icon-briefcase:before { content: '\e80b'; } /* '' */
+.icon-book:before { content: '\e80c'; } /* '' */
+.icon-folder:before { content: '\e80d'; } /* '' */
+.icon-minus-squared:before { content: '\e80e'; } /* '' */
+.icon-plus-squared:before { content: '\e80f'; } /* '' */
+.icon-plus-squared-alt:before { content: '\e810'; } /* '' */
+.icon-minus-squared-alt:before { content: '\e811'; } /* '' */
+.icon-bank:before { content: '\e812'; } /* '' */
+.icon-graduation-cap:before { content: '\e813'; } /* '' */
+.icon-logout:before { content: '\e814'; } /* '' */
