@@ -1,15 +1,4 @@
-[class^="icon-"], [class*=" icon-"] {
-  font-family: 'fontello';
-  font-style: normal;
-  font-weight: normal;
- 
-  /* fix buttons height */
-  line-height: 1em;
- 
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-}
- 
+
 .icon-link-ext { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe800;&nbsp;'); }
 .icon-link-ext-alt { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe801;&nbsp;'); }
 .icon-angle-double-right { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe802;&nbsp;'); }
@@ -31,4 +20,3 @@
 .icon-bank { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe812;&nbsp;'); }
 .icon-graduation-cap { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe813;&nbsp;'); }
 .icon-logout { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe814;&nbsp;'); }
-.icon-oma-opintopolku { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe815;&nbsp;'); }
